@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D8834CA64C1804E9C7DEBB9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 218463949B61A9E06F4DCF8A /* libPods.a */; };
 		33DD84BC1B245152000EF9A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84BB1B245152000EF9A6 /* main.m */; };
 		33DD84BF1B245152000EF9A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84BE1B245152000EF9A6 /* AppDelegate.m */; };
 		33DD84C21B245153000EF9A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84C11B245153000EF9A6 /* ViewController.m */; };
@@ -14,6 +15,8 @@
 		33DD84C71B245153000EF9A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33DD84C61B245153000EF9A6 /* Images.xcassets */; };
 		33DD84CA1B245153000EF9A6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33DD84C81B245153000EF9A6 /* LaunchScreen.xib */; };
 		33DD84D61B245153000EF9A6 /* TuBusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84D51B245153000EF9A6 /* TuBusTests.m */; };
+		33DD84E41B2452A8000EF9A6 /* SYSoapClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84E11B2452A8000EF9A6 /* SYSoapClient.m */; };
+		33DD84E51B2452A8000EF9A6 /* SYSoapXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84E31B2452A8000EF9A6 /* SYSoapXMLParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		218463949B61A9E06F4DCF8A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DD84B61B245152000EF9A6 /* TuBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DD84BA1B245152000EF9A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33DD84BB1B245152000EF9A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +44,12 @@
 		33DD84CF1B245153000EF9A6 /* TuBusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuBusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DD84D41B245153000EF9A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33DD84D51B245153000EF9A6 /* TuBusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuBusTests.m; sourceTree = "<group>"; };
+		33DD84E01B2452A8000EF9A6 /* SYSoapClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSoapClient.h; sourceTree = "<group>"; };
+		33DD84E11B2452A8000EF9A6 /* SYSoapClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSoapClient.m; sourceTree = "<group>"; };
+		33DD84E21B2452A8000EF9A6 /* SYSoapXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSoapXMLParser.h; sourceTree = "<group>"; };
+		33DD84E31B2452A8000EF9A6 /* SYSoapXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSoapXMLParser.m; sourceTree = "<group>"; };
+		5EC6D810FF8FA3D2B93D1FEC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D1B1F2649EBA56ED6BD81E0F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D8834CA64C1804E9C7DEBB9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +71,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31EA9B2D2B62DB7E2EB8ADDD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D1B1F2649EBA56ED6BD81E0F /* Pods.debug.xcconfig */,
+				5EC6D810FF8FA3D2B93D1FEC /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		33DD84AD1B245152000EF9A6 = {
 			isa = PBXGroup;
 			children = (
 				33DD84B81B245152000EF9A6 /* TuBus */,
 				33DD84D21B245153000EF9A6 /* TuBusTests */,
 				33DD84B71B245152000EF9A6 /* Products */,
+				31EA9B2D2B62DB7E2EB8ADDD /* Pods */,
+				C764C0A0DF03F59A3605142D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +103,7 @@
 		33DD84B81B245152000EF9A6 /* TuBus */ = {
 			isa = PBXGroup;
 			children = (
+				33DD84DF1B245296000EF9A6 /* SoapUtilities */,
 				33DD84BD1B245152000EF9A6 /* AppDelegate.h */,
 				33DD84BE1B245152000EF9A6 /* AppDelegate.m */,
 				33DD84C01B245153000EF9A6 /* ViewController.h */,
@@ -119,6 +142,25 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		33DD84DF1B245296000EF9A6 /* SoapUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				33DD84E01B2452A8000EF9A6 /* SYSoapClient.h */,
+				33DD84E11B2452A8000EF9A6 /* SYSoapClient.m */,
+				33DD84E21B2452A8000EF9A6 /* SYSoapXMLParser.h */,
+				33DD84E31B2452A8000EF9A6 /* SYSoapXMLParser.m */,
+			);
+			name = SoapUtilities;
+			sourceTree = "<group>";
+		};
+		C764C0A0DF03F59A3605142D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				218463949B61A9E06F4DCF8A /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33DD84D91B245153000EF9A6 /* Build configuration list for PBXNativeTarget "TuBus" */;
 			buildPhases = (
+				35E6FE38C5EED37C2C966C94 /* Check Pods Manifest.lock */,
 				33DD84B21B245152000EF9A6 /* Sources */,
 				33DD84B31B245152000EF9A6 /* Frameworks */,
 				33DD84B41B245152000EF9A6 /* Resources */,
+				4B84CD3AB42CA25D5D6A45D7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,6 +258,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		35E6FE38C5EED37C2C966C94 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4B84CD3AB42CA25D5D6A45D7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		33DD84B21B245152000EF9A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -221,7 +298,9 @@
 			files = (
 				33DD84C21B245153000EF9A6 /* ViewController.m in Sources */,
 				33DD84BF1B245152000EF9A6 /* AppDelegate.m in Sources */,
+				33DD84E51B2452A8000EF9A6 /* SYSoapXMLParser.m in Sources */,
 				33DD84BC1B245152000EF9A6 /* main.m in Sources */,
+				33DD84E41B2452A8000EF9A6 /* SYSoapClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +424,7 @@
 		};
 		33DD84DA1B245153000EF9A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1B1F2649EBA56ED6BD81E0F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TuBus/Info.plist;
@@ -355,6 +435,7 @@
 		};
 		33DD84DB1B245153000EF9A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EC6D810FF8FA3D2B93D1FEC /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TuBus/Info.plist;
@@ -416,6 +497,7 @@
 				33DD84DB1B245153000EF9A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33DD84DC1B245153000EF9A6 /* Build configuration list for PBXNativeTarget "TuBusTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +506,7 @@
 				33DD84DE1B245153000EF9A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
