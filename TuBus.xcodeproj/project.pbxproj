@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2D8834CA64C1804E9C7DEBB9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 218463949B61A9E06F4DCF8A /* libPods.a */; };
+		330D09191B25E011003E449C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330D09181B25E011003E449C /* Security.framework */; };
+		330D091B1B25E015003E449C /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330D091A1B25E015003E449C /* Accounts.framework */; };
+		330D091D1B25E05C003E449C /* SOAPEngine64.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330D091C1B25E05C003E449C /* SOAPEngine64.framework */; };
+		330D09411B260EA4003E449C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330D09401B260EA4003E449C /* CoreMedia.framework */; };
+		330D09431B260EAC003E449C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330D09421B260EAC003E449C /* CoreMotion.framework */; };
+		330D09451B260EB2003E449C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330D09441B260EB2003E449C /* AVFoundation.framework */; };
+		330D09471B260EBD003E449C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330D09461B260EBD003E449C /* SystemConfiguration.framework */; };
+		330D09491B260EC3003E449C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330D09481B260EC3003E449C /* OpenGLES.framework */; };
 		33DD84BC1B245152000EF9A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84BB1B245152000EF9A6 /* main.m */; };
 		33DD84BF1B245152000EF9A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84BE1B245152000EF9A6 /* AppDelegate.m */; };
 		33DD84C21B245153000EF9A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84C11B245153000EF9A6 /* ViewController.m */; };
@@ -15,8 +23,6 @@
 		33DD84C71B245153000EF9A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33DD84C61B245153000EF9A6 /* Images.xcassets */; };
 		33DD84CA1B245153000EF9A6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33DD84C81B245153000EF9A6 /* LaunchScreen.xib */; };
 		33DD84D61B245153000EF9A6 /* TuBusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84D51B245153000EF9A6 /* TuBusTests.m */; };
-		33DD84E41B2452A8000EF9A6 /* SYSoapClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84E11B2452A8000EF9A6 /* SYSoapClient.m */; };
-		33DD84E51B2452A8000EF9A6 /* SYSoapXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84E31B2452A8000EF9A6 /* SYSoapXMLParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +37,14 @@
 
 /* Begin PBXFileReference section */
 		218463949B61A9E06F4DCF8A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		330D09181B25E011003E449C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		330D091A1B25E015003E449C /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		330D091C1B25E05C003E449C /* SOAPEngine64.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SOAPEngine64.framework; sourceTree = "<group>"; };
+		330D09401B260EA4003E449C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		330D09421B260EAC003E449C /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		330D09441B260EB2003E449C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		330D09461B260EBD003E449C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		330D09481B260EC3003E449C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		33DD84B61B245152000EF9A6 /* TuBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DD84BA1B245152000EF9A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33DD84BB1B245152000EF9A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -44,10 +58,6 @@
 		33DD84CF1B245153000EF9A6 /* TuBusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TuBusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DD84D41B245153000EF9A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33DD84D51B245153000EF9A6 /* TuBusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuBusTests.m; sourceTree = "<group>"; };
-		33DD84E01B2452A8000EF9A6 /* SYSoapClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSoapClient.h; sourceTree = "<group>"; };
-		33DD84E11B2452A8000EF9A6 /* SYSoapClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSoapClient.m; sourceTree = "<group>"; };
-		33DD84E21B2452A8000EF9A6 /* SYSoapXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSoapXMLParser.h; sourceTree = "<group>"; };
-		33DD84E31B2452A8000EF9A6 /* SYSoapXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSoapXMLParser.m; sourceTree = "<group>"; };
 		5EC6D810FF8FA3D2B93D1FEC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D1B1F2649EBA56ED6BD81E0F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +67,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				330D09491B260EC3003E449C /* OpenGLES.framework in Frameworks */,
+				330D09471B260EBD003E449C /* SystemConfiguration.framework in Frameworks */,
+				330D09451B260EB2003E449C /* AVFoundation.framework in Frameworks */,
+				330D09431B260EAC003E449C /* CoreMotion.framework in Frameworks */,
+				330D09411B260EA4003E449C /* CoreMedia.framework in Frameworks */,
+				330D091D1B25E05C003E449C /* SOAPEngine64.framework in Frameworks */,
+				330D091B1B25E015003E449C /* Accounts.framework in Frameworks */,
+				330D09191B25E011003E449C /* Security.framework in Frameworks */,
 				2D8834CA64C1804E9C7DEBB9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,7 +121,6 @@
 		33DD84B81B245152000EF9A6 /* TuBus */ = {
 			isa = PBXGroup;
 			children = (
-				33DD84DF1B245296000EF9A6 /* SoapUtilities */,
 				33DD84BD1B245152000EF9A6 /* AppDelegate.h */,
 				33DD84BE1B245152000EF9A6 /* AppDelegate.m */,
 				33DD84C01B245153000EF9A6 /* ViewController.h */,
@@ -142,20 +159,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		33DD84DF1B245296000EF9A6 /* SoapUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				33DD84E01B2452A8000EF9A6 /* SYSoapClient.h */,
-				33DD84E11B2452A8000EF9A6 /* SYSoapClient.m */,
-				33DD84E21B2452A8000EF9A6 /* SYSoapXMLParser.h */,
-				33DD84E31B2452A8000EF9A6 /* SYSoapXMLParser.m */,
-			);
-			name = SoapUtilities;
-			sourceTree = "<group>";
-		};
 		C764C0A0DF03F59A3605142D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				330D09481B260EC3003E449C /* OpenGLES.framework */,
+				330D09461B260EBD003E449C /* SystemConfiguration.framework */,
+				330D09441B260EB2003E449C /* AVFoundation.framework */,
+				330D09421B260EAC003E449C /* CoreMotion.framework */,
+				330D09401B260EA4003E449C /* CoreMedia.framework */,
+				330D091C1B25E05C003E449C /* SOAPEngine64.framework */,
+				330D091A1B25E015003E449C /* Accounts.framework */,
+				330D09181B25E011003E449C /* Security.framework */,
 				218463949B61A9E06F4DCF8A /* libPods.a */,
 			);
 			name = Frameworks;
@@ -298,9 +312,7 @@
 			files = (
 				33DD84C21B245153000EF9A6 /* ViewController.m in Sources */,
 				33DD84BF1B245152000EF9A6 /* AppDelegate.m in Sources */,
-				33DD84E51B2452A8000EF9A6 /* SYSoapXMLParser.m in Sources */,
 				33DD84BC1B245152000EF9A6 /* main.m in Sources */,
-				33DD84E41B2452A8000EF9A6 /* SYSoapClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,8 +439,37 @@
 			baseConfigurationReference = D1B1F2649EBA56ED6BD81E0F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = TuBus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TuBus/TestFairySDK-1",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Pods-AFNetworking\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-lxml2",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -438,8 +479,37 @@
 			baseConfigurationReference = 5EC6D810FF8FA3D2B93D1FEC /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = TuBus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TuBus/TestFairySDK-1",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Pods-AFNetworking\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-lxml2",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

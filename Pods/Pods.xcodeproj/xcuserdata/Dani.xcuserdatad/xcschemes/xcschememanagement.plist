@@ -9,16 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-BlockTypeDescription.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-BlocksKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>812DE89226E60C4813B5FC0F</key>
+		<key>0486FE236820D33CC8DA65DE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C08B74F27804D3CA55471EC2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C43EAF4A413080ED8A860EE0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F0AC4465C7C691994F456D49</key>
+		<key>2D578252E2D71EBB6523757B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

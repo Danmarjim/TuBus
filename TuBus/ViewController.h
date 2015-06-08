@@ -7,9 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SOAPEngine64/SOAPEngine.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <SOAPEngineDelegate>
+{
+    SOAPEngine *soap;
+    NSMutableArray *list;
+}
 
+@property (weak, nonatomic) IBOutlet UITextField *valueLine;
+@property (weak, nonatomic) IBOutlet UITextField *valueStop;
+
+@property (weak, nonatomic) IBOutlet UITextField *valueTimeFirst;
+@property (weak, nonatomic) IBOutlet UITextField *valueDistanceFirst;
+@property (weak, nonatomic) IBOutlet UITextField *valueTimeSecond;
+@property (weak, nonatomic) IBOutlet UITextField *valueDistanceSecond;
+
+@property (nonatomic, strong) NSMutableArray *stopArrayMinutes;
+@property (nonatomic, strong) NSMutableArray *stopArrayDistance;
 
 @end
 
