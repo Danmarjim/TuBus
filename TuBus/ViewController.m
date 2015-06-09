@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AFNetworking.h"
 
 @interface ViewController ()
 
@@ -26,14 +27,6 @@ static UILabel *label;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    list = [NSMutableArray new];
-    soap = [[SOAPEngine alloc] init];
-    
-    soap.userAgent = @"SOAPEngine";
-    //soap.licenseKey = @"eJJDzkPK9Xx+p5cOH7w0Q+AvPdgK1fzWWuUpMaYCq3r1mwf36Ocw6dn0+CLjRaOiSjfXaFQBWMi+TxCpxVF/FA==";
-    soap.delegate = self;
-    soap.actionNamespaceSlash = YES;
     
     self.title = @"TuBus";
     
@@ -66,89 +59,63 @@ static UILabel *label;
 
 -(void)loadData
 {
-    [soap setValue:_valueLine.text forKey:@"linea"];
-    [soap setValue:_valueStop.text forKey:@"parada"];
-    [soap setIntegerValue:1 forKey:@"status"];
+    [self.stopArrayDistance removeAllObjects];
+    [self.stopArrayMinutes removeAllObjects];
     
-    [soap requestURL:@"http://www.infobustussam.com:9001/services/dinamica.asmx"
-          soapAction:@"http://tempuri.org/GetPasoParada"];
-}
-
-#pragma mark - SOPAEngine delegates
-
-- (void)soapEngine:(SOAPEngine *)soapEngine didFailWithError:(NSError *)error {
+    NSURL *baseURL = [NSURL URLWithString:@"http://www.infobustussam.com:9001/services/dinamica.asmx"];
     
-    //NSString *msg = [NSString stringWithFormat:@"ERROR: %@", error.localizedDescription];
-}
-
-- (void)soapEngine:(SOAPEngine *)soapEngine didFinishLoading:(NSString *)stringXML
-{
-    NSDictionary *result = [soapEngine dictionaryValue];
-    list = [[NSMutableArray alloc] initWithArray:[result valueForKey:@"Hola"]];
+    NSString *soapBody = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><GetPasoParada xmlns=\"http://tempuri.org/\"><linea>01</linea><parada>047</parada><status>1</status></GetPasoParada></soap:Body></soap:Envelope>"];
     
-    if (list.count > 0) {
-        label = [[UILabel alloc] initWithFrame:(CGRect){0, 0, 320, 50}];
-        label.backgroundColor = [UIColor yellowColor];
-        [self.view addSubview:label];
-        [label setText:[[list firstObject] valueForKey:@"Lineas"]];
-    } else {
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:baseURL];
+    
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:[soapBody dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [request addValue:@"http://tempuri.org/GetPasoParada" forHTTPHeaderField:@"SOAPAction"];
+    
+    [request addValue:@"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        // do whatever you'd like here; for example, if you want to convert
+        // it to a string and log it, you might do something like:
         
-        NSLog(@"%@", stringXML);
-    }
+        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        
+        NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
+        
+        self.parser = [[NSXMLParser alloc] initWithData:data];
+        self.parser.delegate = self;
+        [self.parser parse];
+        
+        //Get the values from xml and display on the screen.
+        
+        [self.valueTimeFirst setText:[NSString stringWithFormat:@"%@", [self.stopArrayMinutes objectAtIndex:0]]];
+        [self.valueTimeSecond setText:[NSString stringWithFormat:@"%@", [self.stopArrayMinutes objectAtIndex:1]]];
+        [self.valueDistanceFirst setText:[NSString stringWithFormat:@"%@", [self.stopArrayDistance objectAtIndex:0]]];
+        [self.valueDistanceSecond setText:[NSString stringWithFormat:@"%@", [self.stopArrayDistance objectAtIndex:1]]];
+        
+        NSLog(@"%@", string);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%s: AFHTTPRequestOperation error: %@", __FUNCTION__, error);
+    }];
     
-    NSLog(@"%@", stringXML);
     
-    NSData *data = [stringXML dataUsingEncoding:NSUTF8StringEncoding];
-    
-    self.parser = [[NSXMLParser alloc] initWithData:data];
-    self.parser.delegate = self;
-    [self.parser parse];
-    
-    //Recoger los valores parseados del xml y mostrarlos por pantalla.
-    
-    [self.valueTimeFirst setText:[NSString stringWithFormat:@"%@", [self.stopArrayMinutes objectAtIndex:0]]];
-    [self.valueTimeSecond setText:[NSString stringWithFormat:@"%@", [self.stopArrayMinutes objectAtIndex:1]]];
-    [self.valueDistanceFirst setText:[NSString stringWithFormat:@"%@", [self.stopArrayDistance objectAtIndex:0]]];
-    [self.valueDistanceSecond setText:[NSString stringWithFormat:@"%@", [self.stopArrayDistance objectAtIndex:1]]];
+    [operation start];
 }
 
-- (BOOL)soapEngine:(SOAPEngine *)soapEngine didReceiveResponseCode:(NSInteger)statusCode
-{
-    // 200 is response Ok, 500 Server error
-    // see http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
-    // for more response codes
-    if (statusCode != 200 && statusCode != 500) {
-        //NSString *msg = [NSString stringWithFormat:@"ERROR: received status code %li", (long)statusCode];
-        return NO;
-    }
-    
-    return YES;
-}
-
-- (NSMutableURLRequest*)soapEngine:(SOAPEngine *)soapEngine didBeforeSendingURLRequest:(NSMutableURLRequest *)request
-{
-    // use this delegate for personalize the header of the request
-    // eg: [request setValue:@"my-value" forHTTPHeaderField:@"my-header-field"];
-    
-    NSLog(@"%@", [request allHTTPHeaderFields]);
-    
-    NSString *xml = [[NSString alloc] initWithData:[request HTTPBody] encoding:NSASCIIStringEncoding];
-    NSLog(@"%@", xml);
-    
-    return request;
-}
-
-- (NSString *)soapEngine:(SOAPEngine *)soapEngine didBeforeParsingResponseString:(NSString *)stringXML
-{
-    // use this delegate for change the xml response before parsing it.
-    return stringXML;
-}
+//Method for dismiss KEYBOARD
 
 -(void)dismissKeyboard
 {
     [_valueLine resignFirstResponder];
     [_valueStop resignFirstResponder];
 }
+
+
+//Methods for XML Parser
 
 - (void)parser:(NSXMLParser *)parser
     didStartElement:(NSString *)elementName

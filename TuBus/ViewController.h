@@ -7,13 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <SOAPEngine64/SOAPEngine.h>
 
-@interface ViewController : UIViewController <SOAPEngineDelegate>
-{
-    SOAPEngine *soap;
-    NSMutableArray *list;
-}
+@interface ViewController : UIViewController <NSXMLParserDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *valueLine;
 @property (weak, nonatomic) IBOutlet UITextField *valueStop;

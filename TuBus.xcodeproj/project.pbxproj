@@ -8,14 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2D8834CA64C1804E9C7DEBB9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 218463949B61A9E06F4DCF8A /* libPods.a */; };
-		330D09191B25E011003E449C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330D09181B25E011003E449C /* Security.framework */; };
-		330D091B1B25E015003E449C /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330D091A1B25E015003E449C /* Accounts.framework */; };
-		330D091D1B25E05C003E449C /* SOAPEngine64.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330D091C1B25E05C003E449C /* SOAPEngine64.framework */; };
-		330D09411B260EA4003E449C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330D09401B260EA4003E449C /* CoreMedia.framework */; };
-		330D09431B260EAC003E449C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330D09421B260EAC003E449C /* CoreMotion.framework */; };
-		330D09451B260EB2003E449C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330D09441B260EB2003E449C /* AVFoundation.framework */; };
-		330D09471B260EBD003E449C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330D09461B260EBD003E449C /* SystemConfiguration.framework */; };
-		330D09491B260EC3003E449C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330D09481B260EC3003E449C /* OpenGLES.framework */; };
 		33DD84BC1B245152000EF9A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84BB1B245152000EF9A6 /* main.m */; };
 		33DD84BF1B245152000EF9A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84BE1B245152000EF9A6 /* AppDelegate.m */; };
 		33DD84C21B245153000EF9A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84C11B245153000EF9A6 /* ViewController.m */; };
@@ -67,14 +59,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				330D09491B260EC3003E449C /* OpenGLES.framework in Frameworks */,
-				330D09471B260EBD003E449C /* SystemConfiguration.framework in Frameworks */,
-				330D09451B260EB2003E449C /* AVFoundation.framework in Frameworks */,
-				330D09431B260EAC003E449C /* CoreMotion.framework in Frameworks */,
-				330D09411B260EA4003E449C /* CoreMedia.framework in Frameworks */,
-				330D091D1B25E05C003E449C /* SOAPEngine64.framework in Frameworks */,
-				330D091B1B25E015003E449C /* Accounts.framework in Frameworks */,
-				330D09191B25E011003E449C /* Security.framework in Frameworks */,
 				2D8834CA64C1804E9C7DEBB9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,10 +436,7 @@
 				INFOPLIST_FILE = TuBus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/TuBus/TestFairySDK-1",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -492,10 +473,7 @@
 				INFOPLIST_FILE = TuBus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/TuBus/TestFairySDK-1",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
