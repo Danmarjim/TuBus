@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2D8834CA64C1804E9C7DEBB9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 218463949B61A9E06F4DCF8A /* libPods.a */; };
+		33CD2AED1B28A07C0081098C /* TBMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CD2AEB1B28A07C0081098C /* TBMainController.m */; };
+		33CD2AF51B28A6070081098C /* TBStopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CD2AF41B28A6070081098C /* TBStopController.m */; };
 		33DD84BC1B245152000EF9A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84BB1B245152000EF9A6 /* main.m */; };
 		33DD84BF1B245152000EF9A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84BE1B245152000EF9A6 /* AppDelegate.m */; };
-		33DD84C21B245153000EF9A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84C11B245153000EF9A6 /* ViewController.m */; };
 		33DD84C51B245153000EF9A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33DD84C31B245153000EF9A6 /* Main.storyboard */; };
 		33DD84C71B245153000EF9A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33DD84C61B245153000EF9A6 /* Images.xcassets */; };
 		33DD84CA1B245153000EF9A6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33DD84C81B245153000EF9A6 /* LaunchScreen.xib */; };
@@ -31,19 +32,22 @@
 		218463949B61A9E06F4DCF8A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		330D09181B25E011003E449C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		330D091A1B25E015003E449C /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
-		330D091C1B25E05C003E449C /* SOAPEngine64.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SOAPEngine64.framework; sourceTree = "<group>"; };
 		330D09401B260EA4003E449C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		330D09421B260EAC003E449C /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		330D09441B260EB2003E449C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		330D09461B260EBD003E449C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		330D09481B260EC3003E449C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		33CD2AEA1B28A07C0081098C /* TBMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBMainController.h; sourceTree = "<group>"; };
+		33CD2AEB1B28A07C0081098C /* TBMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBMainController.m; sourceTree = "<group>"; };
+		33CD2AEF1B28A5650081098C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		33CD2AF11B28A56C0081098C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		33CD2AF31B28A6070081098C /* TBStopController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBStopController.h; sourceTree = "<group>"; };
+		33CD2AF41B28A6070081098C /* TBStopController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBStopController.m; sourceTree = "<group>"; };
 		33DD84B61B245152000EF9A6 /* TuBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DD84BA1B245152000EF9A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33DD84BB1B245152000EF9A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		33DD84BD1B245152000EF9A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		33DD84BE1B245152000EF9A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		33DD84C01B245153000EF9A6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		33DD84C11B245153000EF9A6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		33DD84C41B245153000EF9A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33DD84C61B245153000EF9A6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		33DD84C91B245153000EF9A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -82,6 +86,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		33CD2AE91B28A0550081098C /* views */ = {
+			isa = PBXGroup;
+			children = (
+				33CD2AEA1B28A07C0081098C /* TBMainController.h */,
+				33CD2AEB1B28A07C0081098C /* TBMainController.m */,
+				33CD2AF31B28A6070081098C /* TBStopController.h */,
+				33CD2AF41B28A6070081098C /* TBStopController.m */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
 		33DD84AD1B245152000EF9A6 = {
 			isa = PBXGroup;
 			children = (
@@ -105,10 +120,9 @@
 		33DD84B81B245152000EF9A6 /* TuBus */ = {
 			isa = PBXGroup;
 			children = (
+				33CD2AE91B28A0550081098C /* views */,
 				33DD84BD1B245152000EF9A6 /* AppDelegate.h */,
 				33DD84BE1B245152000EF9A6 /* AppDelegate.m */,
-				33DD84C01B245153000EF9A6 /* ViewController.h */,
-				33DD84C11B245153000EF9A6 /* ViewController.m */,
 				33DD84C31B245153000EF9A6 /* Main.storyboard */,
 				33DD84C61B245153000EF9A6 /* Images.xcassets */,
 				33DD84C81B245153000EF9A6 /* LaunchScreen.xib */,
@@ -146,12 +160,13 @@
 		C764C0A0DF03F59A3605142D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				33CD2AF11B28A56C0081098C /* CoreLocation.framework */,
+				33CD2AEF1B28A5650081098C /* MapKit.framework */,
 				330D09481B260EC3003E449C /* OpenGLES.framework */,
 				330D09461B260EBD003E449C /* SystemConfiguration.framework */,
 				330D09441B260EB2003E449C /* AVFoundation.framework */,
 				330D09421B260EAC003E449C /* CoreMotion.framework */,
 				330D09401B260EA4003E449C /* CoreMedia.framework */,
-				330D091C1B25E05C003E449C /* SOAPEngine64.framework */,
 				330D091A1B25E015003E449C /* Accounts.framework */,
 				330D09181B25E011003E449C /* Security.framework */,
 				218463949B61A9E06F4DCF8A /* libPods.a */,
@@ -294,7 +309,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33DD84C21B245153000EF9A6 /* ViewController.m in Sources */,
+				33CD2AED1B28A07C0081098C /* TBMainController.m in Sources */,
+				33CD2AF51B28A6070081098C /* TBStopController.m in Sources */,
 				33DD84BF1B245152000EF9A6 /* AppDelegate.m in Sources */,
 				33DD84BC1B245152000EF9A6 /* main.m in Sources */,
 			);

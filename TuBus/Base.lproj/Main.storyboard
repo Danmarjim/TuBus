@@ -4,10 +4,44 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Controller-->
+        <scene sceneID="SS0-Hr-Tn0">
+            <objects>
+                <viewController id="Ccw-sT-6vo" customClass="TBMainController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qd2-Kd-Er6"/>
+                        <viewControllerLayoutGuide type="bottom" id="yWk-5f-ipe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ejd-3H-9nZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9rj-eh-iLk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CAP-5p-bEN">
+                        <barButtonItem key="rightBarButtonItem" title="Paradas" id="w5y-S8-eJH">
+                            <connections>
+                                <segue destination="vXZ-lx-hvc" kind="show" id="X68-LD-f6m"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mapView" destination="9rj-eh-iLk" id="smn-rJ-k5G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WKs-zV-ewW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="640.5" y="383.5"/>
+        </scene>
+        <!--Stop Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="TBStopController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -125,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="581.5" y="383.5"/>
+            <point key="canvasLocation" x="640.5" y="1225.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mZP-fk-CkK">
@@ -137,7 +171,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="ALb-tX-uku"/>
+                        <segue destination="Ccw-sT-6vo" kind="relationship" relationship="rootViewController" id="UL9-G2-toD"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XKT-Yl-m5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
