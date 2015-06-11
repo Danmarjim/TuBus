@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DDEF05B1B29A6A600B6F61B /* GeodeticUTMConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEF05A1B29A6A600B6F61B /* GeodeticUTMConverter.m */; };
+		1DDEF05E1B29A6E700B6F61B /* CLPAddressAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEF05D1B29A6E700B6F61B /* CLPAddressAnnotation.m */; };
 		2D8834CA64C1804E9C7DEBB9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 218463949B61A9E06F4DCF8A /* libPods.a */; };
 		33CD2AED1B28A07C0081098C /* TBMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CD2AEB1B28A07C0081098C /* TBMainController.m */; };
 		33CD2AF51B28A6070081098C /* TBStopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CD2AF41B28A6070081098C /* TBStopController.m */; };
@@ -29,6 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DDEF0591B29A6A600B6F61B /* GeodeticUTMConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeodeticUTMConverter.h; sourceTree = "<group>"; };
+		1DDEF05A1B29A6A600B6F61B /* GeodeticUTMConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeodeticUTMConverter.m; sourceTree = "<group>"; };
+		1DDEF05C1B29A6E700B6F61B /* CLPAddressAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLPAddressAnnotation.h; sourceTree = "<group>"; };
+		1DDEF05D1B29A6E700B6F61B /* CLPAddressAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPAddressAnnotation.m; sourceTree = "<group>"; };
 		218463949B61A9E06F4DCF8A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		330D09181B25E011003E449C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		330D091A1B25E015003E449C /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -77,6 +83,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DDEF0561B29A67E00B6F61B /* model */ = {
+			isa = PBXGroup;
+			children = (
+				1DDEF0571B29A68700B6F61B /* utils */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		1DDEF0571B29A68700B6F61B /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				1DDEF0581B29A69100B6F61B /* UTMConverter */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		1DDEF0581B29A69100B6F61B /* UTMConverter */ = {
+			isa = PBXGroup;
+			children = (
+				1DDEF05C1B29A6E700B6F61B /* CLPAddressAnnotation.h */,
+				1DDEF05D1B29A6E700B6F61B /* CLPAddressAnnotation.m */,
+				1DDEF0591B29A6A600B6F61B /* GeodeticUTMConverter.h */,
+				1DDEF05A1B29A6A600B6F61B /* GeodeticUTMConverter.m */,
+			);
+			name = UTMConverter;
+			sourceTree = "<group>";
+		};
 		31EA9B2D2B62DB7E2EB8ADDD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +153,7 @@
 		33DD84B81B245152000EF9A6 /* TuBus */ = {
 			isa = PBXGroup;
 			children = (
+				1DDEF0561B29A67E00B6F61B /* model */,
 				33CD2AE91B28A0550081098C /* views */,
 				33DD84BD1B245152000EF9A6 /* AppDelegate.h */,
 				33DD84BE1B245152000EF9A6 /* AppDelegate.m */,
@@ -312,7 +346,9 @@
 				33CD2AED1B28A07C0081098C /* TBMainController.m in Sources */,
 				33CD2AF51B28A6070081098C /* TBStopController.m in Sources */,
 				33DD84BF1B245152000EF9A6 /* AppDelegate.m in Sources */,
+				1DDEF05E1B29A6E700B6F61B /* CLPAddressAnnotation.m in Sources */,
 				33DD84BC1B245152000EF9A6 /* main.m in Sources */,
+				1DDEF05B1B29A6A600B6F61B /* GeodeticUTMConverter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

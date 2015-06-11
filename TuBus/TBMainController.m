@@ -7,6 +7,8 @@
 //
 #import "TBMainController.h"
 #import "AFNetworking.h"
+#import "GeodeticUTMConverter.h"
+#import "CLPAddressAnnotation.h"
 
 @interface TBMainController ()
 
@@ -15,6 +17,8 @@
 
 @property NSNumber *currentLon;
 @property NSNumber *currentLat;
+
+@property (nonatomic, strong) NSTimer *timer;
 
 @end
 
@@ -42,7 +46,25 @@
     self.arrayLat = [[NSMutableArray alloc] init];
     
     //Every each 10 seconds call the service and update the location of buses.
-    [NSTimer scheduledTimerWithTimeInterval:10.0 target:self selector:@selector(getMarkersFromVehicule) userInfo:nil repeats:YES];
+    [self getMarkersFromVehicule];
+    
+     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(getMarkersFromVehicule) userInfo:nil repeats:YES];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:YES];
+    
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager startUpdatingLocation];
+    
+    //View Area
+    MKCoordinateRegion region = { { 0.0, 0.0 }, { 0.0, 0.0 } };
+    region.center.latitude = self.locationManager.location.coordinate.latitude;
+    region.center.longitude = self.locationManager.location.coordinate.longitude;
+    region.span.longitudeDelta = 0.005f;
+    region.span.longitudeDelta = 0.005f;
+    [_mapView setRegion:region animated:YES];
 }
 
 -(void)getMarkersFromVehicule
@@ -79,45 +101,40 @@
         self.parser.delegate = self;
         [self.parser parse];
         
+        //Remover all annotations befora add new ones
+        [self.mapView removeAnnotations:self.mapView.annotations];
+        
+        //Add new annotations
+        UTMCoordinates coordinates;
+        coordinates.gridZone = 30;
+        
+        for(int i=0; i<self.arrayLat.count; i++) {
+            coordinates.northing = [[self.arrayLat objectAtIndex:i] doubleValue];
+            coordinates.easting = [[self.arrayLon objectAtIndex:i] doubleValue];
+            coordinates.hemisphere = kUTMHemisphereNorthern;
+            
+            GeodeticUTMConverter *converter = [[GeodeticUTMConverter alloc] init];
+            CLLocationCoordinate2D testMark = [converter UTMCoordinatesToLatitudeAndLongitude:coordinates];
+            
+            CLPAddressAnnotation *annotationAddress = [[CLPAddressAnnotation alloc] initWithCoordinate:testMark];
+            
+            [self.mapView addAnnotation:annotationAddress];
+        }
+        
         NSLog(@"%@", string);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%s: AFHTTPRequestOperation error: %@", __FUNCTION__, error);
-    }];
-    
+    }];   
     
     [operation start];
-}
-
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:YES];
-    
-    self.locationManager.distanceFilter = kCLDistanceFilterNone;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    [self.locationManager startUpdatingLocation];
-    
-    //View Area
-    MKCoordinateRegion region = { { 0.0, 0.0 }, { 0.0, 0.0 } };
-    region.center.latitude = self.locationManager.location.coordinate.latitude;
-    region.center.longitude = self.locationManager.location.coordinate.longitude;
-    region.span.longitudeDelta = 0.005f;
-    region.span.longitudeDelta = 0.005f;
-    [_mapView setRegion:region animated:YES];
-    
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
-    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
-    
-    //Add an annonation
-    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-    point.coordinate = userLocation.coordinate;
-    point.title = @"Test mark";
-    point.subtitle = @"I'm here!!!";
-    
-    [self.mapView addAnnotation:point];
+    //[self.mapView setRegion:[self.mapView regionThatFits:region] animated:NO];
 }
+
 - (NSString *)deviceLocation {
     return [NSString stringWithFormat:@"latitude: %f longitude: %f", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude];
 }
