@@ -1,0 +1,100 @@
+URL de los servicios:
+Dinamica: http://www.infobustussam.com:9001/services/dinamica.asmx
+Estructura: http://www.infobustussam.com:9001/services/estructura.asmx
+
+Tecnologia SOAP
+Librería para realizar llamadas en iOS: AFNetworking 2.0
+
+Ejemplo de llamada:
+
+NSURL *baseURL = [NSURL URLWithString:@"http://www.infobustussam.com:9001/services/dinamica.asmx"];
+    
+    NSString *soapBody = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><XGetPasoParada xmlns=\"http://tempuri.org/\"><parada>%@</parada><status>1</status></XGetPasoParada></soap:Body></soap:Envelope>", @"053"];
+    
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:baseURL];
+    
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:[soapBody dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [request addValue:@"http://tempuri.org/XGetPasoParada" forHTTPHeaderField:@"SOAPAction"];
+    
+    [request addValue:@"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        // do whatever you'd like here; for example, if you want to convert
+        // it to a string and log it, you might do something like:
+        
+        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"%@", string);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%s: AFHTTPRequestOperation error: %@", __FUNCTION__, error);
+    }];
+    
+    
+    [operation start];
+
+El valor resultante sera un XML, el cual habra que parsear para obtener los datos deseados. En iOS utilizaremos la librería propia del SDK, NSXMLParser.
+
+SERVICIO COMPLETO:
+
+DINAMICA:
+
+GetPasoParada: Metodo que se utiliza para obtener los datos de cada parada. Tiempo y distancia. En caso de no meter por parámetros una linea dará todas las que se encuentren en dicha parada y no filtrara.
+
+Ejemplo de llamada:
+
+<PasoParada><cabecera>false</cabecera><e1><minutos>0</minutos><metros>77</metros><tipo>NORMAL</tipo></e1><e2><minutos>10</minutos><metros>1040</metros><tipo>NORMAL</tipo></e2><linea>01</linea><parada>047</parada><ruta>HOSPITAL V.ROCIO</ruta><sublinea>1</sublinea></PasoParada>
+
+GetVehiculos: Metodo que se utiliza para obtener los datos de los vehículos de cada linea, con este método se pueden conseguir las coordenadas actuales y pintar su ubicación en el mapa. Las coordenadas están en el sistema UTM por lo que es necesario un convertor para pasarlas a coordenadas geográficas.
+
+Ejemplo de llamada:
+
+<InfoVehiculo><vehiculo>1090</vehiculo><linea>1.0</linea><sublinea>1</sublinea><coche>15</coche><serv_bus>01015</serv_bus><conductor>8882</conductor><serv_cond>0119</serv_cond><estado>0</estado><estadoLocReal>5</estadoLocReal><xcoord>235917</xcoord><ycoord>4142582</ycoord></InfoVehiculo>
+
+GetPasoParada: 
+
+Ejemplo de llamada:
+
+ESTRUCTURA:
+
+GetLines: Metodo que se utiliza para obtener todas las lineas disponibles en la red TUSSAM. La etiqueta macro siempre sera 1.
+
+Ejemplo de llamada:
+
+<InfoLinea><label>01</label><nombre>PGNO.NORTE-GLORIETA PLUS ULTRA</nombre><id>1.0</id><linea>0</linea><macro>1</macro><sublineas><InfoSublinea><sublinea>1</sublinea><nombre>Sublinea 2</nombre></InfoSublinea></sublineas></InfoLinea>
+
+GetLineasFilter: 
+
+Ejemplo de llamada:
+
+GetNodosMapSublinea: Metodo que se utiliza para obtener las datos de las paradas de una linea cualquiera.Nombre, coordenadas, …etc. El campo sublinea siempre sera 1. La etiqueta <nodo> se refiere al numero de la parada.
+
+Ejemplo de llamada:
+
+<InfoNodoMap><nodo>2</nodo><tipo>1</tipo><nombre>MENÉNDEZ PELAYO (PUERTA CARMONA)</nombre><label>01</label><visible>true</visible><posx>235851.0625</posx><posy>4142363.75</posy></InfoNodoMap>
+
+GetPolylineaSublinea: Metodo que se utiliza para mostrar en el mapa un polyline de coordenadas de una linea cualquiera. La etiqueta <num_sublinea> siempre sera 1.
+
+Ejemplo de llamada:
+
+<InfoCoord><x>236013.5</x><y>4144941</y></InfoCoord>
+
+GetRutasSublinea: Metodo que se utiliza para conocer el listado de paradas de una linea. Te devuelve el nombre de la parada, su numero (nodo) y distancia con respecto a la anterior. La <seccion> indica si es ida o vuelta. 1 = IDA, 2 = VUELTA.
+
+Ejemplo de llamada:
+
+<InfoNodoSeccion><nodo>225</nodo><tipo>1</tipo><nombre>TRABAJ. INMIGRANTES(DOCTOR FEDRIANI)</nombre><distancia>311</distancia><visible>true</visible></InfoNodoSeccion>
+
+GetTiposNodosMap: Esta llamada no me devuelve nada por lo que no debe tener ninguna utilidad importante.
+
+GetTopoSublinea: Esta llamada produce la misma respuesta que GetPolylineaSublinea
+
+SearchMode:
+
+Ejemplo de llamada:
+
+

@@ -10,6 +10,7 @@
 		1DDEF05B1B29A6A600B6F61B /* GeodeticUTMConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEF05A1B29A6A600B6F61B /* GeodeticUTMConverter.m */; };
 		1DDEF05E1B29A6E700B6F61B /* CLPAddressAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEF05D1B29A6E700B6F61B /* CLPAddressAnnotation.m */; };
 		2D8834CA64C1804E9C7DEBB9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 218463949B61A9E06F4DCF8A /* libPods.a */; };
+		3328F07A1B2B435F00D0093A /* APITussam.m in Sources */ = {isa = PBXBuildFile; fileRef = 3328F0791B2B435F00D0093A /* APITussam.m */; };
 		33CD2AED1B28A07C0081098C /* TBMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CD2AEB1B28A07C0081098C /* TBMainController.m */; };
 		33CD2AF51B28A6070081098C /* TBStopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CD2AF41B28A6070081098C /* TBStopController.m */; };
 		33DD84BC1B245152000EF9A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84BB1B245152000EF9A6 /* main.m */; };
@@ -43,6 +44,8 @@
 		330D09441B260EB2003E449C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		330D09461B260EBD003E449C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		330D09481B260EC3003E449C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		3328F0781B2B435F00D0093A /* APITussam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APITussam.h; sourceTree = "<group>"; };
+		3328F0791B2B435F00D0093A /* APITussam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APITussam.m; sourceTree = "<group>"; };
 		33CD2AEA1B28A07C0081098C /* TBMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBMainController.h; sourceTree = "<group>"; };
 		33CD2AEB1B28A07C0081098C /* TBMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBMainController.m; sourceTree = "<group>"; };
 		33CD2AEF1B28A5650081098C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -86,6 +89,7 @@
 		1DDEF0561B29A67E00B6F61B /* model */ = {
 			isa = PBXGroup;
 			children = (
+				3328F0771B2B433D00D0093A /* api */,
 				1DDEF0571B29A68700B6F61B /* utils */,
 			);
 			name = model;
@@ -117,6 +121,15 @@
 				5EC6D810FF8FA3D2B93D1FEC /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		3328F0771B2B433D00D0093A /* api */ = {
+			isa = PBXGroup;
+			children = (
+				3328F0781B2B435F00D0093A /* APITussam.h */,
+				3328F0791B2B435F00D0093A /* APITussam.m */,
+			);
+			name = api;
 			sourceTree = "<group>";
 		};
 		33CD2AE91B28A0550081098C /* views */ = {
@@ -343,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3328F07A1B2B435F00D0093A /* APITussam.m in Sources */,
 				33CD2AED1B28A07C0081098C /* TBMainController.m in Sources */,
 				33CD2AF51B28A6070081098C /* TBStopController.m in Sources */,
 				33DD84BF1B245152000EF9A6 /* AppDelegate.m in Sources */,

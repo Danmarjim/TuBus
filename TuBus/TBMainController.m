@@ -9,6 +9,7 @@
 #import "AFNetworking.h"
 #import "GeodeticUTMConverter.h"
 #import "CLPAddressAnnotation.h"
+#import "APITussam.h"
 
 @interface TBMainController ()
 
@@ -19,6 +20,8 @@
 @property NSNumber *currentLat;
 
 @property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) NSMutableArray *arrayCoord;
+@property (nonatomic, strong) NSUserDefaults *userData;
 
 @end
 
@@ -44,11 +47,34 @@
 
     self.arrayLon = [[NSMutableArray alloc] init];
     self.arrayLat = [[NSMutableArray alloc] init];
+    self.arrayCoord = [[NSMutableArray alloc] init];
+    self.userData = [NSUserDefaults standardUserDefaults];
+    
+    //Service to get all lines from TUSSAM
+    //[self getLines];
     
     //Every each 10 seconds call the service and update the location of buses.
-    [self getMarkersFromVehicule];
+    //[self getVehiculos];
     
-     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(getMarkersFromVehicule) userInfo:nil repeats:YES];
+    //self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(getVehiculos) userInfo:nil repeats:YES];
+    
+    //Services request to get all stops. Filter by line.
+    //[self getNodosMapSublinea];
+    
+    //Service request to get Polyline. Filter by line, after that i can display on the mapView.
+    //[self getPolylineaSublinea];
+    
+    //Service to get "El itinerario" for each line
+    //[self getRutasSublinea];
+    
+    //Service NULL
+    //[self getTiposNodosMap];
+    
+    //Service to
+    //[self getTopoSublinea];
+    
+    //Service to
+    //[self searchNode];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -67,7 +93,7 @@
     [_mapView setRegion:region animated:YES];
 }
 
--(void)getMarkersFromVehicule
+-(void)getVehiculos
 {
     //Remove all items from arrays
     [self.arrayLat removeAllObjects];
@@ -76,7 +102,6 @@
     NSURL *baseURL = [NSURL URLWithString:@"http://www.infobustussam.com:9001/services/dinamica.asmx"];
     
     NSString *soapBody = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><GetVehiculos xmlns=\"http://tempuri.org/\"><linea>%@</linea></GetVehiculos></soap:Body></soap:Envelope>", @"01"];
-    
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:baseURL];
     
@@ -90,8 +115,6 @@
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        // do whatever you'd like here; for example, if you want to convert
-        // it to a string and log it, you might do something like:
         
         NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         
@@ -117,10 +140,11 @@
             CLLocationCoordinate2D testMark = [converter UTMCoordinatesToLatitudeAndLongitude:coordinates];
             
             CLPAddressAnnotation *annotationAddress = [[CLPAddressAnnotation alloc] initWithCoordinate:testMark];
+            [self.arrayCoord addObject:annotationAddress];
             
             [self.mapView addAnnotation:annotationAddress];
         }
-        
+
         NSLog(@"%@", string);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%s: AFHTTPRequestOperation error: %@", __FUNCTION__, error);
@@ -129,10 +153,231 @@
     [operation start];
 }
 
+-(void)getLines
+{
+    APITussam *api = [APITussam alloc];
+    [api getLines];
+}
+
+-(void)getNodosMapSublinea
+{
+    NSURL *baseURL = [NSURL URLWithString:@"http://www.infobustussam.com:9001/services/estructura.asmx"];
+    
+    NSString *soapBody = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><GetNodosMapSublinea xmlns=\"http://tempuri.org/\"><label>%@</label><sublinea>1</sublinea></GetNodosMapSublinea></soap:Body></soap:Envelope>", @"01"];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:baseURL];
+    
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:[soapBody dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [request addValue:@"http://tempuri.org/GetNodosMapSublinea" forHTTPHeaderField:@"SOAPAction"];
+    
+    [request addValue:@"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+
+        NSLog(@"%@", string);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%s: AFHTTPRequestOperation error: %@", __FUNCTION__, error);
+    }];
+    
+    [operation start];
+}
+
+-(void)getPolylineaSublinea
+{
+    //Remove all items from arrays
+    [self.arrayLat removeAllObjects];
+    [self.arrayLon removeAllObjects];
+    
+    NSURL *baseURL = [NSURL URLWithString:@"http://www.infobustussam.com:9001/services/estructura.asmx"];
+    
+    NSString *soapBody = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><GetPolylineaSublinea xmlns=\"http://tempuri.org/\"><label_linea>%@</label_linea><num_sublinea>1</num_sublinea></GetPolylineaSublinea></soap:Body></soap:Envelope>", @"01"];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:baseURL];
+    
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:[soapBody dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [request addValue:@"http://tempuri.org/GetPolylineaSublinea" forHTTPHeaderField:@"SOAPAction"];
+    
+    [request addValue:@"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        
+        NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
+        
+        self.parser = [[NSXMLParser alloc] initWithData:data];
+        self.parser.delegate = self;
+        [self.parser parse];
+        
+        //Remover all annotations befora add new ones
+        [self.mapView removeAnnotations:self.mapView.annotations];
+        
+        //Add new annotations
+        UTMCoordinates coordinates;
+        coordinates.gridZone = 30;
+        
+        for(int i=0; i<self.arrayLat.count; i++) {
+            coordinates.northing = [[self.arrayLat objectAtIndex:i] doubleValue];
+            coordinates.easting = [[self.arrayLon objectAtIndex:i] doubleValue];
+            coordinates.hemisphere = kUTMHemisphereNorthern;
+            
+            GeodeticUTMConverter *converter = [[GeodeticUTMConverter alloc] init];
+            CLLocationCoordinate2D testMark = [converter UTMCoordinatesToLatitudeAndLongitude:coordinates];
+            
+            CLPAddressAnnotation *annotationAddress = [[CLPAddressAnnotation alloc] initWithCoordinate:testMark];
+            [self.arrayCoord addObject:annotationAddress];
+            
+            [self drawRoute:self.arrayCoord];
+        }
+
+        NSLog(@"%@", string);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%s: AFHTTPRequestOperation error: %@", __FUNCTION__, error);
+    }];
+    
+    [operation start];
+}
+
+-(void)getRutasSublinea
+{
+    NSURL *baseURL = [NSURL URLWithString:@"http://www.infobustussam.com:9001/services/estructura.asmx"];
+    
+    NSString *soapBody = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><GetRutasSublinea xmlns=\"http://tempuri.org/\"><label>%@</label><sublinea>1</sublinea></GetRutasSublinea></soap:Body></soap:Envelope>", @"01"];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:baseURL];
+    
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:[soapBody dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [request addValue:@"http://tempuri.org/GetRutasSublinea" forHTTPHeaderField:@"SOAPAction"];
+    
+    [request addValue:@"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"%@", string);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%s: AFHTTPRequestOperation error: %@", __FUNCTION__, error);
+    }];
+    
+    [operation start];
+}
+
+-(void)getTiposNodosMap
+{
+    NSURL *baseURL = [NSURL URLWithString:@"http://www.infobustussam.com:9001/services/estructura.asmx"];
+    
+    NSString *soapBody = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><GetTiposNodosMap xmlns=\"http://tempuri.org/\" /></soap:Body></soap:Envelope>"];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:baseURL];
+    
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:[soapBody dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [request addValue:@"http://tempuri.org/GetTiposNodosMap" forHTTPHeaderField:@"SOAPAction"];
+    
+    [request addValue:@"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"%@", string);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%s: AFHTTPRequestOperation error: %@", __FUNCTION__, error);
+    }];
+    
+    [operation start];
+}
+
+-(void)getTopoSublinea
+{
+    NSURL *baseURL = [NSURL URLWithString:@"http://www.infobustussam.com:9001/services/estructura.asmx"];
+    
+    NSString *soapBody = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><GetTopoSublinea xmlns=\"http://tempuri.org/\"><label>%@</label><sublinea>1</sublinea></GetTopoSublinea></soap:Body></soap:Envelope>", @"01"];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:baseURL];
+    
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:[soapBody dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [request addValue:@"http://tempuri.org/GetTopoSublinea" forHTTPHeaderField:@"SOAPAction"];
+    
+    [request addValue:@"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"%@", string);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%s: AFHTTPRequestOperation error: %@", __FUNCTION__, error);
+    }];
+    
+    [operation start];
+}
+
+-(void)searchNode
+{
+    NSURL *baseURL = [NSURL URLWithString:@"http://www.infobustussam.com:9001/services/estructura.asmx"];
+    
+    NSString *soapBody = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><SearchNode xmlns=\"http://tempuri.org/\"><substring>%@</substring></SearchNode></soap:Body></soap:Envelope>", @"01"];    
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:baseURL];
+    
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:[soapBody dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [request addValue:@"http://tempuri.org/SearchNode" forHTTPHeaderField:@"SOAPAction"];
+    
+    [request addValue:@"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"%@", string);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%s: AFHTTPRequestOperation error: %@", __FUNCTION__, error);
+    }];
+    
+    [operation start];
+}
+
+//Update the mapview
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
-    //[self.mapView setRegion:[self.mapView regionThatFits:region] animated:NO];
+    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:NO];
+}
+
+//Here draw and update the polylines
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay {
+    MKPolylineView *polylineView = [[MKPolylineView alloc] initWithPolyline:overlay];
+    polylineView.strokeColor = [UIColor redColor];
+    polylineView.lineWidth = 3.0;
+    
+    return polylineView;
 }
 
 - (NSString *)deviceLocation {
@@ -148,8 +393,24 @@
     return [NSString stringWithFormat:@"%f", self.locationManager.location.altitude];
 }
 
-//Methods for XML Parser
+//Method when we get the coordinates and draw the polyline
+- (void)drawRoute:(NSArray *)path
+{
+    NSInteger numberOfSteps = path.count;
+    
+    CLLocationCoordinate2D coordinates[numberOfSteps];
+    for (NSInteger index = 0; index < numberOfSteps; index++) {
+        CLLocation *location = [path objectAtIndex:index];
+        CLLocationCoordinate2D coordinate = location.coordinate;
+        
+        coordinates[index] = coordinate;
+    }
+    
+    MKPolyline *polyLine = [MKPolyline polylineWithCoordinates:coordinates count:numberOfSteps];
+    [self.mapView addOverlay:polyLine];
+}
 
+//Methods for XML Parser
 - (void)parser:(NSXMLParser *)parser
 didStartElement:(NSString *)elementName
   namespaceURI:(NSString *)namespaceURI
@@ -166,6 +427,10 @@ foundCharacters:(NSString *)string
         self.currentLon = [NSNumber numberWithInt:string.intValue];
     } else if([self.element isEqualToString:@"ycoord"]){
         self.currentLat = [NSNumber numberWithInt:string.intValue];
+    } else if([self.element isEqualToString:@"x"]){
+        self.currentLon = [NSNumber numberWithInt:string.intValue];
+    } else if([self.element isEqualToString:@"y"]){
+        self.currentLat = [NSNumber numberWithInt:string.intValue];
     }
 }
 
@@ -177,6 +442,10 @@ foundCharacters:(NSString *)string
     if([elementName isEqualToString:@"xcoord"]){
         [self.arrayLon addObject:self.currentLon];
     } else if ([elementName isEqualToString:@"ycoord"]){
+        [self.arrayLat addObject:self.currentLat];
+    } else if([self.element isEqualToString:@"x"]){
+        [self.arrayLon addObject:self.currentLon];
+    } else if([self.element isEqualToString:@"y"]){
         [self.arrayLat addObject:self.currentLat];
     }
     self.element = nil;
