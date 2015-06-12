@@ -93,8 +93,5 @@ GetTiposNodosMap: Esta llamada no me devuelve nada por lo que no debe tener ning
 
 GetTopoSublinea: Esta llamada produce la misma respuesta que GetPolylineaSublinea
 
-SearchMode:
-
-Ejemplo de llamada:
-
+SearchMode: Esta llamada devuelve nodos similares (Ningun uso importante).
 
