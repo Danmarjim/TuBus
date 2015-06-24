@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sll-7a-agJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sll-7a-agJ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--Main Controller-->
@@ -23,15 +23,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="CAP-5p-bEN">
-                        <barButtonItem key="rightBarButtonItem" title="Paradas" id="w5y-S8-eJH">
+                        <barButtonItem key="rightBarButtonItem" image="burger.png" id="2pW-pa-ht1">
                             <connections>
-                                <segue destination="vXZ-lx-hvc" kind="show" id="X68-LD-f6m"/>
+                                <action selector="presentMenuButtonTapped:" destination="Ccw-sT-6vo" id="sey-6F-Lei"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="mapView" destination="9rj-eh-iLk" id="smn-rJ-k5G"/>
+                        <segue destination="suB-Iu-F1X" kind="show" identifier="openTwitterController" id="ap1-81-7Mg"/>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="openStopController" id="iVe-W8-Dz0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKs-zV-ewW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -146,13 +148,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="HiI-KF-Mvh">
-                        <barButtonItem key="rightBarButtonItem" title="Twitter" id="TcJ-rJ-bh9">
-                            <connections>
-                                <segue destination="suB-Iu-F1X" kind="show" id="pC8-4p-5ul"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="HiI-KF-Mvh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="valueDistanceFirst" destination="acD-wG-f3G" id="ycA-Hy-BUZ"/>
@@ -165,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="640.5" y="1225.5"/>
+            <point key="canvasLocation" x="640.5" y="1291.5"/>
         </scene>
         <!--Twitter Controller-->
         <scene sceneID="BFh-7o-35h">
@@ -184,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQ2-e9-VqF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1120.5" y="1225.5"/>
+            <point key="canvasLocation" x="1121.5" y="1291.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mZP-fk-CkK">
@@ -204,4 +200,7 @@
             <point key="canvasLocation" x="40.5" y="383.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="burger.png" width="19" height="17"/>
+    </resources>
 </document>

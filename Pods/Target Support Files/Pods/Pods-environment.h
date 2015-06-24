@@ -48,6 +48,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 5
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 4
 
+// ContextMenu.iOS
+#define COCOAPODS_POD_AVAILABLE_ContextMenu_iOS
+#define COCOAPODS_VERSION_MAJOR_ContextMenu_iOS 1
+#define COCOAPODS_VERSION_MINOR_ContextMenu_iOS 0
+#define COCOAPODS_VERSION_PATCH_ContextMenu_iOS 0
+
 // MBProgressHUD
 #define COCOAPODS_POD_AVAILABLE_MBProgressHUD
 #define COCOAPODS_VERSION_MAJOR_MBProgressHUD 0

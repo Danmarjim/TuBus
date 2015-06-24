@@ -21,6 +21,10 @@
 		1DE0F8C51B3ACEA8007D8572 /* TBTwitterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE0F8C41B3ACEA8007D8572 /* TBTwitterController.m */; };
 		2D8834CA64C1804E9C7DEBB9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 218463949B61A9E06F4DCF8A /* libPods.a */; };
 		3328F07A1B2B435F00D0093A /* APITussam.m in Sources */ = {isa = PBXBuildFile; fileRef = 3328F0791B2B435F00D0093A /* APITussam.m */; };
+		3339B9101B3B118100CD64A6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CD2AEF1B28A5650081098C /* MapKit.framework */; };
+		3339B9151B3B15F300CD64A6 /* ContextMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3339B9131B3B15F300CD64A6 /* ContextMenuCell.m */; };
+		3339B9161B3B15F300CD64A6 /* ContextMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3339B9141B3B15F300CD64A6 /* ContextMenuCell.xib */; };
+		3339B9181B3B19A200CD64A6 /* burger.png in Resources */ = {isa = PBXBuildFile; fileRef = 3339B9171B3B19A200CD64A6 /* burger.png */; };
 		33CD2AED1B28A07C0081098C /* TBMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CD2AEB1B28A07C0081098C /* TBMainController.m */; };
 		33CD2AF51B28A6070081098C /* TBStopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CD2AF41B28A6070081098C /* TBStopController.m */; };
 		33DD84BC1B245152000EF9A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84BB1B245152000EF9A6 /* main.m */; };
@@ -71,6 +75,10 @@
 		330D09481B260EC3003E449C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		3328F0781B2B435F00D0093A /* APITussam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APITussam.h; sourceTree = "<group>"; };
 		3328F0791B2B435F00D0093A /* APITussam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APITussam.m; sourceTree = "<group>"; };
+		3339B9121B3B15F300CD64A6 /* ContextMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextMenuCell.h; sourceTree = "<group>"; };
+		3339B9131B3B15F300CD64A6 /* ContextMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextMenuCell.m; sourceTree = "<group>"; };
+		3339B9141B3B15F300CD64A6 /* ContextMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContextMenuCell.xib; sourceTree = "<group>"; };
+		3339B9171B3B19A200CD64A6 /* burger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burger.png; sourceTree = "<group>"; };
 		33CD2AEA1B28A07C0081098C /* TBMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBMainController.h; sourceTree = "<group>"; };
 		33CD2AEB1B28A07C0081098C /* TBMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBMainController.m; sourceTree = "<group>"; };
 		33CD2AEF1B28A5650081098C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -97,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3339B9101B3B118100CD64A6 /* MapKit.framework in Frameworks */,
 				1DE0F8B61B3AC2EA007D8572 /* CoreGraphics.framework in Frameworks */,
 				1DE0F8BF1B3ACE38007D8572 /* Fabric.framework in Frameworks */,
 				1DE0F8C21B3ACE38007D8572 /* TwitterCore.framework in Frameworks */,
@@ -195,9 +204,20 @@
 			name = api;
 			sourceTree = "<group>";
 		};
+		3339B9111B3B15E200CD64A6 /* ContextMenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				3339B9121B3B15F300CD64A6 /* ContextMenuCell.h */,
+				3339B9131B3B15F300CD64A6 /* ContextMenuCell.m */,
+				3339B9141B3B15F300CD64A6 /* ContextMenuCell.xib */,
+			);
+			name = ContextMenuCell;
+			sourceTree = "<group>";
+		};
 		33CD2AE91B28A0550081098C /* views */ = {
 			isa = PBXGroup;
 			children = (
+				3339B9111B3B15E200CD64A6 /* ContextMenuCell */,
 				33CD2AEA1B28A07C0081098C /* TBMainController.h */,
 				33CD2AEB1B28A07C0081098C /* TBMainController.m */,
 				33CD2AF31B28A6070081098C /* TBStopController.h */,
@@ -237,6 +257,7 @@
 				33DD84BE1B245152000EF9A6 /* AppDelegate.m */,
 				33DD84C31B245153000EF9A6 /* Main.storyboard */,
 				33DD84C61B245153000EF9A6 /* Images.xcassets */,
+				3339B9171B3B19A200CD64A6 /* burger.png */,
 				33DD84C81B245153000EF9A6 /* LaunchScreen.xib */,
 				33DD84B91B245152000EF9A6 /* Supporting Files */,
 			);
@@ -373,6 +394,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DE0F8C11B3ACE38007D8572 /* TwitterKitResources.bundle in Resources */,
+				3339B9161B3B15F300CD64A6 /* ContextMenuCell.xib in Resources */,
+				3339B9181B3B19A200CD64A6 /* burger.png in Resources */,
 				33DD84C51B245153000EF9A6 /* Main.storyboard in Resources */,
 				33DD84CA1B245153000EF9A6 /* LaunchScreen.xib in Resources */,
 				33DD84C71B245153000EF9A6 /* Images.xcassets in Resources */,
@@ -447,6 +470,7 @@
 				33DD84BF1B245152000EF9A6 /* AppDelegate.m in Sources */,
 				1DDEF05E1B29A6E700B6F61B /* CLPAddressAnnotation.m in Sources */,
 				33DD84BC1B245152000EF9A6 /* main.m in Sources */,
+				3339B9151B3B15F300CD64A6 /* ContextMenuCell.m in Sources */,
 				1DDEF05B1B29A6A600B6F61B /* GeodeticUTMConverter.m in Sources */,
 				1DE0F8C51B3ACEA8007D8572 /* TBTwitterController.m in Sources */,
 			);

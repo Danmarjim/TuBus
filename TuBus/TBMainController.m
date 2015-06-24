@@ -6,12 +6,15 @@
 //  Copyright (c) 2015 Daniel Martin Jimenez. All rights reserved.
 //
 #import "TBMainController.h"
-#import "AFNetworking.h"
-#import "GeodeticUTMConverter.h"
-#import "CLPAddressAnnotation.h"
-#import "APITussam.h"
+
+static NSString *const menuCellIdentifier = @"rotationCell";
 
 @interface TBMainController ()
+<
+UITableViewDelegate,
+UITableViewDataSource,
+YALContextMenuTableViewDelegate
+>
 
 @property NSXMLParser *parser;
 @property NSString *element;
@@ -22,6 +25,9 @@
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) NSMutableArray *arrayCoord;
 @property (nonatomic, strong) NSUserDefaults *userData;
+@property (nonatomic, strong) YALContextMenuTableView* contextMenuTableView;
+@property (nonatomic, strong) NSArray *menuTitles;
+@property (nonatomic, strong) NSArray *menuIcons;
 
 @end
 
@@ -29,6 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initiateMenuOptions];
     // Do any additional setup after loading the view from its nib.
     self.title = @"Bienvenido";
     
@@ -95,6 +102,86 @@
     region.span.longitudeDelta = 0.005f;
     region.span.longitudeDelta = 0.005f;
     [_mapView setRegion:region animated:YES];
+}
+
+- (IBAction)presentMenuButtonTapped:(UIBarButtonItem *)sender {
+    // init YALContextMenuTableView tableView
+    if (!self.contextMenuTableView) {
+        self.contextMenuTableView = [[YALContextMenuTableView alloc]initWithTableViewDelegateDataSource:self];
+        self.contextMenuTableView.animationDuration = 0.15;
+        //optional - implement custom YALContextMenuTableView custom protocol
+        self.contextMenuTableView.yalDelegate = self;
+        
+        //register nib
+        UINib *cellNib = [UINib nibWithNibName:@"ContextMenuCell" bundle:nil];
+        [self.contextMenuTableView registerNib:cellNib forCellReuseIdentifier:menuCellIdentifier];
+    }
+    
+    // it is better to use this method only for proper animation
+    [self.contextMenuTableView showInView:self.navigationController.view withEdgeInsets:UIEdgeInsetsZero animated:YES];
+}
+
+- (void)initiateMenuOptions {
+    self.menuTitles = @[@"",
+                        @"Paradas",
+                        @"Twitter",
+                        @"Add to friends",
+                        @"Add to favourites",
+                        @"Block user"];
+    
+    self.menuIcons = @[[UIImage imageNamed:@"Icnclose"],
+                       [UIImage imageNamed:@"SendMessageIcn"],
+                       [UIImage imageNamed:@"LikeIcn"],
+                       [UIImage imageNamed:@"AddToFriendsIcn"],
+                       [UIImage imageNamed:@"AddToFavouritesIcn"],
+                       [UIImage imageNamed:@"BlockUserIcn"]];
+}
+
+#pragma mark - YALContextMenuTableViewDelegate
+
+- (void)contextMenuTableView:(YALContextMenuTableView *)contextMenuTableView didDismissWithIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Menu dismissed with indexpath = %@", indexPath);
+}
+
+#pragma mark - UITableViewDataSource, UITableViewDelegate
+
+- (void)tableView:(YALContextMenuTableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if([[self.menuTitles objectAtIndex:indexPath.row] isEqualToString:@"Paradas"])
+    {
+        [tableView dismisWithIndexPath:indexPath];
+        [self performSegueWithIdentifier:@"openStopController" sender:nil];
+    } else if([[self.menuTitles objectAtIndex:indexPath.row] isEqualToString:@"Twitter"]){
+        [tableView dismisWithIndexPath:indexPath];
+        [self performSegueWithIdentifier:@"openTwitterController" sender:nil];
+    }
+    
+    [tableView dismisWithIndexPath:indexPath];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 110;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.menuTitles.count;
+}
+
+- (UITableViewCell *)tableView:(YALContextMenuTableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    ContextMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:menuCellIdentifier forIndexPath:indexPath];
+    
+    if (cell) {
+        cell.backgroundColor = [UIColor clearColor];
+        cell.menuTitleLabel.text = [self.menuTitles objectAtIndex:indexPath.row];
+        cell.menuImageView.image = [self.menuIcons objectAtIndex:indexPath.row];
+    }
+    
+    return cell;
 }
 
 -(void)getVehiculos
@@ -366,13 +453,6 @@
     }];
     
     [operation start];
-}
-
-//Update the mapview
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
-    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:NO];
 }
 
 //Here draw and update the polylines

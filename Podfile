@@ -4,3 +4,4 @@
 pod 'AFNetworking'
 pod 'SplunkMint'
 pod 'MBProgressHUD', '~> 0.9.1'
+pod 'ContextMenu.iOS', '~> 1.0.0'
