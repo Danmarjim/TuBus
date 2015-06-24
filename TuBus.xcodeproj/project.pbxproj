@@ -11,6 +11,9 @@
 		1DDEF05E1B29A6E700B6F61B /* CLPAddressAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEF05D1B29A6E700B6F61B /* CLPAddressAnnotation.m */; };
 		1DE0F8AD1B3ABA1E007D8572 /* CustomIOSAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE0F8AC1B3ABA1E007D8572 /* CustomIOSAlertView.m */; };
 		1DE0F8B01B3ABB78007D8572 /* UIColor+MyColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE0F8AF1B3ABB78007D8572 /* UIColor+MyColor.m */; };
+		1DE0F8B21B3AC2DC007D8572 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE0F8B11B3AC2DC007D8572 /* Foundation.framework */; };
+		1DE0F8B41B3AC2E2007D8572 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE0F8B31B3AC2E2007D8572 /* UIKit.framework */; };
+		1DE0F8B61B3AC2EA007D8572 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE0F8B51B3AC2EA007D8572 /* CoreGraphics.framework */; };
 		2D8834CA64C1804E9C7DEBB9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 218463949B61A9E06F4DCF8A /* libPods.a */; };
 		3328F07A1B2B435F00D0093A /* APITussam.m in Sources */ = {isa = PBXBuildFile; fileRef = 3328F0791B2B435F00D0093A /* APITussam.m */; };
 		33CD2AED1B28A07C0081098C /* TBMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CD2AEB1B28A07C0081098C /* TBMainController.m */; };
@@ -42,6 +45,9 @@
 		1DE0F8AC1B3ABA1E007D8572 /* CustomIOSAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIOSAlertView.m; sourceTree = "<group>"; };
 		1DE0F8AE1B3ABB78007D8572 /* UIColor+MyColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MyColor.h"; sourceTree = "<group>"; };
 		1DE0F8AF1B3ABB78007D8572 /* UIColor+MyColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MyColor.m"; sourceTree = "<group>"; };
+		1DE0F8B11B3AC2DC007D8572 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1DE0F8B31B3AC2E2007D8572 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1DE0F8B51B3AC2EA007D8572 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		218463949B61A9E06F4DCF8A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		330D09181B25E011003E449C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		330D091A1B25E015003E449C /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -78,6 +84,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DE0F8B61B3AC2EA007D8572 /* CoreGraphics.framework in Frameworks */,
+				1DE0F8B41B3AC2E2007D8572 /* UIKit.framework in Frameworks */,
+				1DE0F8B21B3AC2DC007D8572 /* Foundation.framework in Frameworks */,
 				2D8834CA64C1804E9C7DEBB9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +234,9 @@
 		C764C0A0DF03F59A3605142D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1DE0F8B51B3AC2EA007D8572 /* CoreGraphics.framework */,
+				1DE0F8B31B3AC2E2007D8572 /* UIKit.framework */,
+				1DE0F8B11B3AC2DC007D8572 /* Foundation.framework */,
 				33CD2AF11B28A56C0081098C /* CoreLocation.framework */,
 				33CD2AEF1B28A5650081098C /* MapKit.framework */,
 				330D09481B260EC3003E449C /* OpenGLES.framework */,

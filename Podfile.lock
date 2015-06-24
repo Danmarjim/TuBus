@@ -20,11 +20,17 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - MBProgressHUD (0.9.1)
+  - SplunkMint (4.2.2)
 
 DEPENDENCIES:
   - AFNetworking
+  - MBProgressHUD (~> 0.9.1)
+  - SplunkMint
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  SplunkMint: 5bc47a97e867e891a983655e30c8c14618e967e6
 
-COCOAPODS: 0.37.1
+COCOAPODS: 0.37.2

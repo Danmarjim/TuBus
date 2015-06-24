@@ -76,6 +76,9 @@
     
     //Service to
     //[self searchNode];
+    
+    //SPLUNK MINT Analitics
+    //[[Mint sharedInstance] initAndStartSession:@"0ec3a64d"];
 }
 
 -(void)viewDidAppear:(BOOL)animated {

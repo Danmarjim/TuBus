@@ -8,7 +8,9 @@
 
 #import "TBStopController.h"
 
-@interface TBStopController ()
+@interface TBStopController () <MBProgressHUDDelegate> {
+    MBProgressHUD *HUD;
+}
 
 @property NSXMLParser *parser;
 @property NSString *element;
@@ -49,7 +51,15 @@ static UILabel *label;
 -(IBAction)doService
 {
     if(self.valueLine.text.length > 0 && self.valueStop.text.length > 0){
-        [self getPasoParada];
+        HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+        [self.navigationController.view addSubview:HUD];
+        
+        // Regiser for HUD callbacks so we can remove it from the window at the right time
+        HUD.delegate = self;
+        HUD.labelText = @"Cargando";
+        
+        // Show the HUD while the provided method executes in a new thread
+        [HUD showWhileExecuting:@selector(getPasoParada) onTarget:self withObject:nil animated:YES];
     } else {
         [self createAlertView];
     }
@@ -123,7 +133,7 @@ static UILabel *label;
     text.backgroundColor = [UIColor customColor];
     text.textColor = [UIColor whiteColor];
     text.text = @"ATENCIÓN";
-    [text setFont:[UIFont fontWithName:@"HelveticaNeue" size:20]];
+    [text setFont:[UIFont fontWithName:@"Helvetica Neue" size:20]];
     text.textAlignment = NSTextAlignmentCenter;
     [text setUserInteractionEnabled:FALSE];
     [demoView addSubview:text];
@@ -131,7 +141,7 @@ static UILabel *label;
     UITextView *text2 = [[UITextView alloc] initWithFrame:CGRectMake(20, 60, 250, 120)];
     text2.text = @"Faltan datos. Por favor, revise los campos antes de volver a realizar la llamada";
     text2.textColor = [UIColor customColorTextAlert];
-    [text2 setFont:[UIFont fontWithName:@"HelveticaNeue" size:15]];
+    [text2 setFont:[UIFont fontWithName:@"Helvetica Neue" size:15]];
     [text2 setUserInteractionEnabled:FALSE];
     [demoView addSubview:text2];
     

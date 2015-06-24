@@ -10,6 +10,7 @@
 #import "APITussam.h"
 #import "CustomIOSAlertView.h"
 #import "UIColor+MyColor.h"
+#import "MBProgressHUD.h"
 
 @interface TBStopController : UIViewController <NSXMLParserDelegate, CustomIOSAlertViewDelegate>
 
