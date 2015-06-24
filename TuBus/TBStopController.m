@@ -7,8 +7,6 @@
 //
 
 #import "TBStopController.h"
-#import "AFNetworking.h"
-#import "APITussam.h"
 
 @interface TBStopController ()
 
@@ -50,7 +48,11 @@ static UILabel *label;
 
 -(IBAction)doService
 {
-    [self getPasoParada];
+    if(self.valueLine.text.length > 0 && self.valueStop.text.length > 0){
+        [self getPasoParada];
+    } else {
+        [self createAlertView];
+    }
 }
 
 -(void)getPasoParada
@@ -97,6 +99,49 @@ static UILabel *label;
     
     
     [operation start];
+}
+
+-(void)createAlertView
+{
+    self.alertView = [[CustomIOSAlertView alloc] init];
+    [self.alertView setContainerView:[self createAlert]];
+    [self.alertView setButtonTitles:[NSMutableArray arrayWithObjects:@"CONTINUAR", nil]];
+    
+    [self.alertView setUseMotionEffects:true];
+    [self.alertView show];
+}
+
+//Method to create the AlertView
+- (UIView *)createAlert
+{
+    UIView *demoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 290, 130)];
+    demoView.layer.cornerRadius = 10;
+    demoView.clipsToBounds = YES;
+    demoView.backgroundColor = [UIColor whiteColor];
+    
+    UITextView *text = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 290, 40)];
+    text.backgroundColor = [UIColor customColor];
+    text.textColor = [UIColor whiteColor];
+    text.text = @"ATENCIÓN";
+    [text setFont:[UIFont fontWithName:@"HelveticaNeue" size:20]];
+    text.textAlignment = NSTextAlignmentCenter;
+    [text setUserInteractionEnabled:FALSE];
+    [demoView addSubview:text];
+    
+    UITextView *text2 = [[UITextView alloc] initWithFrame:CGRectMake(20, 60, 250, 120)];
+    text2.text = @"Faltan datos. Por favor, revise los campos antes de volver a realizar la llamada";
+    text2.textColor = [UIColor customColorTextAlert];
+    [text2 setFont:[UIFont fontWithName:@"HelveticaNeue" size:15]];
+    [text2 setUserInteractionEnabled:FALSE];
+    [demoView addSubview:text2];
+    
+    return demoView;
+}
+
+//Method from CustomIOSAlert for IOS7
+- (void)customIOS7dialogButtonTouchUpInside: (CustomIOSAlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
+{
+    [alertView close];
 }
 
 //Method for dismiss KEYBOARD

@@ -6,8 +6,14 @@
 //  Copyright (c) 2015 Daniel Martin Jimenez. All rights reserved.
 //
 #import <UIKit/UIKit.h>
+#import "AFNetworking.h"
+#import "APITussam.h"
+#import "CustomIOSAlertView.h"
+#import "UIColor+MyColor.h"
 
-@interface TBStopController : UIViewController <NSXMLParserDelegate>
+@interface TBStopController : UIViewController <NSXMLParserDelegate, CustomIOSAlertViewDelegate>
+
+@property (nonatomic, strong) CustomIOSAlertView *alertView;
 
 @property (weak, nonatomic) IBOutlet UITextField *valueLine;
 @property (weak, nonatomic) IBOutlet UITextField *valueStop;

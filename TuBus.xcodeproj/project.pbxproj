@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1DDEF05B1B29A6A600B6F61B /* GeodeticUTMConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEF05A1B29A6A600B6F61B /* GeodeticUTMConverter.m */; };
 		1DDEF05E1B29A6E700B6F61B /* CLPAddressAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEF05D1B29A6E700B6F61B /* CLPAddressAnnotation.m */; };
+		1DE0F8AD1B3ABA1E007D8572 /* CustomIOSAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE0F8AC1B3ABA1E007D8572 /* CustomIOSAlertView.m */; };
+		1DE0F8B01B3ABB78007D8572 /* UIColor+MyColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE0F8AF1B3ABB78007D8572 /* UIColor+MyColor.m */; };
 		2D8834CA64C1804E9C7DEBB9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 218463949B61A9E06F4DCF8A /* libPods.a */; };
 		3328F07A1B2B435F00D0093A /* APITussam.m in Sources */ = {isa = PBXBuildFile; fileRef = 3328F0791B2B435F00D0093A /* APITussam.m */; };
 		33CD2AED1B28A07C0081098C /* TBMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CD2AEB1B28A07C0081098C /* TBMainController.m */; };
@@ -36,6 +38,10 @@
 		1DDEF05A1B29A6A600B6F61B /* GeodeticUTMConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeodeticUTMConverter.m; sourceTree = "<group>"; };
 		1DDEF05C1B29A6E700B6F61B /* CLPAddressAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLPAddressAnnotation.h; sourceTree = "<group>"; };
 		1DDEF05D1B29A6E700B6F61B /* CLPAddressAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPAddressAnnotation.m; sourceTree = "<group>"; };
+		1DE0F8AB1B3ABA1E007D8572 /* CustomIOSAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomIOSAlertView.h; sourceTree = "<group>"; };
+		1DE0F8AC1B3ABA1E007D8572 /* CustomIOSAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIOSAlertView.m; sourceTree = "<group>"; };
+		1DE0F8AE1B3ABB78007D8572 /* UIColor+MyColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MyColor.h"; sourceTree = "<group>"; };
+		1DE0F8AF1B3ABB78007D8572 /* UIColor+MyColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MyColor.m"; sourceTree = "<group>"; };
 		218463949B61A9E06F4DCF8A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		330D09181B25E011003E449C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		330D091A1B25E015003E449C /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -98,6 +104,9 @@
 		1DDEF0571B29A68700B6F61B /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				1DE0F8AE1B3ABB78007D8572 /* UIColor+MyColor.h */,
+				1DE0F8AF1B3ABB78007D8572 /* UIColor+MyColor.m */,
+				1DE0F8AA1B3ABA00007D8572 /* CustomIOSAlert */,
 				1DDEF0581B29A69100B6F61B /* UTMConverter */,
 			);
 			name = utils;
@@ -112,6 +121,15 @@
 				1DDEF05A1B29A6A600B6F61B /* GeodeticUTMConverter.m */,
 			);
 			name = UTMConverter;
+			sourceTree = "<group>";
+		};
+		1DE0F8AA1B3ABA00007D8572 /* CustomIOSAlert */ = {
+			isa = PBXGroup;
+			children = (
+				1DE0F8AB1B3ABA1E007D8572 /* CustomIOSAlertView.h */,
+				1DE0F8AC1B3ABA1E007D8572 /* CustomIOSAlertView.m */,
+			);
+			name = CustomIOSAlert;
 			sourceTree = "<group>";
 		};
 		31EA9B2D2B62DB7E2EB8ADDD /* Pods */ = {
@@ -356,8 +374,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DE0F8AD1B3ABA1E007D8572 /* CustomIOSAlertView.m in Sources */,
 				3328F07A1B2B435F00D0093A /* APITussam.m in Sources */,
 				33CD2AED1B28A07C0081098C /* TBMainController.m in Sources */,
+				1DE0F8B01B3ABB78007D8572 /* UIColor+MyColor.m in Sources */,
 				33CD2AF51B28A6070081098C /* TBStopController.m in Sources */,
 				33DD84BF1B245152000EF9A6 /* AppDelegate.m in Sources */,
 				1DDEF05E1B29A6E700B6F61B /* CLPAddressAnnotation.m in Sources */,
