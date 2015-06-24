@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "Primer coche:"; ObjectID = "1Gb-xC-Nq8"; */
+"1Gb-xC-Nq8.text" = "Primer coche:";
+
+/* Class = "UILabel"; text = "Parada:"; ObjectID = "2xw-A6-1RZ"; */
+"2xw-A6-1RZ.text" = "Parada:";
+
+/* Class = "UILabel"; text = "Tiempo: "; ObjectID = "62g-Ac-KeC"; */
+"62g-Ac-KeC.text" = "Tiempo: ";
+
+/* Class = "UILabel"; text = "Línea:"; ObjectID = "9cD-qh-WRr"; */
+"9cD-qh-WRr.text" = "Línea:";
+
+/* Class = "UILabel"; text = "Tiempo: "; ObjectID = "AUp-hu-MG2"; */
+"AUp-hu-MG2.text" = "Tiempo: ";
+
+/* Class = "UIButton"; normalTitle = "TIEMPOS!"; ObjectID = "HAR-Ep-dwx"; */
+"HAR-Ep-dwx.normalTitle" = "TIEMPOS!";
+
+/* Class = "UIBarButtonItem"; title = "Twitter"; ObjectID = "TcJ-rJ-bh9"; */
+"TcJ-rJ-bh9.title" = "Twitter";
+
+/* Class = "UILabel"; text = "Distancia:"; ObjectID = "dM8-8D-QO1"; */
+"dM8-8D-QO1.text" = "Distancia:";
+
+/* Class = "UILabel"; text = "Distancia:"; ObjectID = "dhT-Mc-tw6"; */
+"dhT-Mc-tw6.text" = "Distancia:";
+
+/* Class = "UILabel"; text = "Llegadas"; ObjectID = "eQi-5b-aSn"; */
+"eQi-5b-aSn.text" = "Llegadas";
+
+/* Class = "UIBarButtonItem"; title = "Paradas"; ObjectID = "w5y-S8-eJH"; */
+"w5y-S8-eJH.title" = "Paradas";
+
+/* Class = "UILabel"; text = "Segundo coche:"; ObjectID = "weP-eT-imv"; */
+"weP-eT-imv.text" = "Segundo coche:";

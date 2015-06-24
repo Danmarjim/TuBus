@@ -8,9 +8,7 @@
 
 #import "TBStopController.h"
 
-@interface TBStopController () <MBProgressHUDDelegate> {
-    MBProgressHUD *HUD;
-}
+@interface TBStopController ()
 
 @property NSXMLParser *parser;
 @property NSString *element;
@@ -51,15 +49,15 @@ static UILabel *label;
 -(IBAction)doService
 {
     if(self.valueLine.text.length > 0 && self.valueStop.text.length > 0){
-        HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-        [self.navigationController.view addSubview:HUD];
+        self.HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+        [self.navigationController.view addSubview:self.HUD];
         
         // Regiser for HUD callbacks so we can remove it from the window at the right time
-        HUD.delegate = self;
-        HUD.labelText = @"Cargando";
+        self.HUD.delegate = self;
+        self.HUD.labelText = @"Cargando";
         
         // Show the HUD while the provided method executes in a new thread
-        [HUD showWhileExecuting:@selector(getPasoParada) onTarget:self withObject:nil animated:YES];
+        [self.HUD showWhileExecuting:@selector(getPasoParada) onTarget:self withObject:nil animated:YES];
     } else {
         [self createAlertView];
     }

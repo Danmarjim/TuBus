@@ -12,9 +12,10 @@
 #import "UIColor+MyColor.h"
 #import "MBProgressHUD.h"
 
-@interface TBStopController : UIViewController <NSXMLParserDelegate, CustomIOSAlertViewDelegate>
+@interface TBStopController : UIViewController <NSXMLParserDelegate, CustomIOSAlertViewDelegate, MBProgressHUDDelegate>
 
 @property (nonatomic, strong) CustomIOSAlertView *alertView;
+@property (nonatomic, strong) MBProgressHUD *HUD;
 
 @property (weak, nonatomic) IBOutlet UITextField *valueLine;
 @property (weak, nonatomic) IBOutlet UITextField *valueStop;
