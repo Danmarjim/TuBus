@@ -25,6 +25,8 @@
 		3339B9151B3B15F300CD64A6 /* ContextMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3339B9131B3B15F300CD64A6 /* ContextMenuCell.m */; };
 		3339B9161B3B15F300CD64A6 /* ContextMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3339B9141B3B15F300CD64A6 /* ContextMenuCell.xib */; };
 		3339B9181B3B19A200CD64A6 /* burger.png in Resources */ = {isa = PBXBuildFile; fileRef = 3339B9171B3B19A200CD64A6 /* burger.png */; };
+		3339B91B1B3B1FDE00CD64A6 /* MoPub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3339B9191B3B1FDE00CD64A6 /* MoPub.framework */; };
+		3339B91C1B3B1FDE00CD64A6 /* MoPub.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3339B91A1B3B1FDE00CD64A6 /* MoPub.bundle */; };
 		33CD2AED1B28A07C0081098C /* TBMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CD2AEB1B28A07C0081098C /* TBMainController.m */; };
 		33CD2AF51B28A6070081098C /* TBStopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CD2AF41B28A6070081098C /* TBStopController.m */; };
 		33DD84BC1B245152000EF9A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84BB1B245152000EF9A6 /* main.m */; };
@@ -79,6 +81,8 @@
 		3339B9131B3B15F300CD64A6 /* ContextMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextMenuCell.m; sourceTree = "<group>"; };
 		3339B9141B3B15F300CD64A6 /* ContextMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContextMenuCell.xib; sourceTree = "<group>"; };
 		3339B9171B3B19A200CD64A6 /* burger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burger.png; sourceTree = "<group>"; };
+		3339B9191B3B1FDE00CD64A6 /* MoPub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MoPub.framework; sourceTree = "<group>"; };
+		3339B91A1B3B1FDE00CD64A6 /* MoPub.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MoPub.bundle; sourceTree = "<group>"; };
 		33CD2AEA1B28A07C0081098C /* TBMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBMainController.h; sourceTree = "<group>"; };
 		33CD2AEB1B28A07C0081098C /* TBMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBMainController.m; sourceTree = "<group>"; };
 		33CD2AEF1B28A5650081098C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -106,6 +110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3339B9101B3B118100CD64A6 /* MapKit.framework in Frameworks */,
+				3339B91B1B3B1FDE00CD64A6 /* MoPub.framework in Frameworks */,
 				1DE0F8B61B3AC2EA007D8572 /* CoreGraphics.framework in Frameworks */,
 				1DE0F8BF1B3ACE38007D8572 /* Fabric.framework in Frameworks */,
 				1DE0F8C21B3ACE38007D8572 /* TwitterCore.framework in Frameworks */,
@@ -198,6 +203,7 @@
 		3328F0771B2B433D00D0093A /* api */ = {
 			isa = PBXGroup;
 			children = (
+				3339B91D1B3B1FE200CD64A6 /* APIMoPub */,
 				1DE0F8C71B3ACF57007D8572 /* APITwitter */,
 				1DE0F8C61B3ACF4C007D8572 /* APITussam */,
 			);
@@ -212,6 +218,15 @@
 				3339B9141B3B15F300CD64A6 /* ContextMenuCell.xib */,
 			);
 			name = ContextMenuCell;
+			sourceTree = "<group>";
+		};
+		3339B91D1B3B1FE200CD64A6 /* APIMoPub */ = {
+			isa = PBXGroup;
+			children = (
+				3339B9191B3B1FDE00CD64A6 /* MoPub.framework */,
+				3339B91A1B3B1FDE00CD64A6 /* MoPub.bundle */,
+			);
+			name = APIMoPub;
 			sourceTree = "<group>";
 		};
 		33CD2AE91B28A0550081098C /* views */ = {
@@ -397,6 +412,7 @@
 				3339B9161B3B15F300CD64A6 /* ContextMenuCell.xib in Resources */,
 				3339B9181B3B19A200CD64A6 /* burger.png in Resources */,
 				33DD84C51B245153000EF9A6 /* Main.storyboard in Resources */,
+				3339B91C1B3B1FDE00CD64A6 /* MoPub.bundle in Resources */,
 				33DD84CA1B245153000EF9A6 /* LaunchScreen.xib in Resources */,
 				33DD84C71B245153000EF9A6 /* Images.xcassets in Resources */,
 			);

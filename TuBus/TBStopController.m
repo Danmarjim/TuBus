@@ -44,6 +44,15 @@ static UILabel *label;
     
     self.stopArrayMinutes = [[NSMutableArray alloc] init];
     self.stopArrayDistance = [[NSMutableArray alloc] init];
+    
+    // TODO: Replace this test id with your personal ad unit id
+    MPAdView* adView = [[MPAdView alloc] initWithAdUnitId:@"0fd404de447942edb7610228cb412614"
+                                                     size:MOPUB_BANNER_SIZE];
+    self.adView = adView;
+    self.adView.delegate = self;
+    self.adView.frame = CGRectMake((self.view.bounds.size.width - MOPUB_BANNER_SIZE.width) / 2, 603 - MOPUB_BANNER_SIZE.height, MOPUB_BANNER_SIZE.width, MOPUB_BANNER_SIZE.height);
+    [self.view addSubview:self.adView];
+    [self.adView loadAd];
 }
 
 -(IBAction)doService
@@ -191,6 +200,11 @@ foundCharacters:(NSString *)string
         [self.stopArrayDistance addObject:self.currentMetros];
     }
     self.element = nil;
+}
+
+#pragma mark - <MPAdViewDelegate>
+- (UIViewController *)viewControllerForPresentingModalView {
+    return self;
 }
 
 @end

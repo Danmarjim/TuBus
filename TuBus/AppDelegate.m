@@ -10,6 +10,8 @@
 #import "AppDelegate.h"
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
+#import <MoPub/MoPub.h>
+
 
 @interface AppDelegate ()
 
@@ -35,8 +37,9 @@
     //VALORES DE LA STATUSBAR EN BLANCO
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    [Fabric with:@[TwitterKit]];
-    
+    //[Fabric with:@[TwitterKit]];
+    [Fabric with:@[MoPubKit, TwitterKit]];
+
     return YES;
 }
 
