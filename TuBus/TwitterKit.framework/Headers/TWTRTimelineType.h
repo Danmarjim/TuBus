@@ -22,4 +22,8 @@ typedef NS_ENUM(NSUInteger, TWTRTimelineType) {
      *  Collection Timeline
      */
     TWTRTimelineTypeCollection,
+    /**
+     *  List Timeline
+     */
+    TWTRTimelineTypeList,
 };

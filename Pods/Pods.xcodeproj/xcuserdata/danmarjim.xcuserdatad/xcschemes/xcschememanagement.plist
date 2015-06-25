@@ -8,26 +8,57 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Pods-ContextMenu.iOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>Pods-MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0B660D81A07A04EDF0002E3F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0DA2AB42056455EAD109ADBB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>2919E0D267BE0679CD73D861</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>62D8F0A493CABB4EF18B00E3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9B7B11FEFAB6C4D175070816</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A315AB52CD3C684F3C59FF71</key>
 		<dict>
 			<key>primary</key>
 			<true/>

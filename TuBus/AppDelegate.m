@@ -34,6 +34,9 @@
     [[UINavigationBar appearance] setTitleTextAttributes: textTitleOptions];    
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
+    //QUITA EL VALOR BACK Y EL TITULO DE LA NAVBAR
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)                                                          forBarMetrics:UIBarMetricsDefault];
+    
     //VALORES DE LA STATUSBAR EN BLANCO
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     

@@ -101,6 +101,20 @@
 - (void)logInGuestWithCompletion:(TWTRGuestLogInCompletion)completion;
 
 /**
+ *  Triggers user authentication with Twitter given an existing session.
+ *
+ *  Use this method if you have already authenticated with Twitter and are migrating to TwitterKit. This
+ *  method will verify that the `authToken` and `authTokenSecret` are still valid and log the user in with
+ *  the existing credentials.
+ *
+ *  @param authToken The existing authToken to use for authentication.
+ *  @param authTokenSecret The existing authTokenSecret to use for authentication.
+ *  @param completion The completion block will be called after authentication is successful or if there is an error.
+ *  @warning This method requires that you have set up your `consumerKey` and `consumerSecret`.
+ */
+- (void)logInWithExistingAuthToken:(NSString *)authToken authTokenSecret:(NSString *)authTokenSecret completion:(TWTRLogInCompletion)completion;
+
+/**
  *  Returns the current user session or nil if there is no logged in user.
  *
  *  @return Returns the current user session or nil if there is no logged in user.

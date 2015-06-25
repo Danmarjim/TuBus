@@ -24,7 +24,6 @@
 		3339B9101B3B118100CD64A6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CD2AEF1B28A5650081098C /* MapKit.framework */; };
 		3339B9151B3B15F300CD64A6 /* ContextMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3339B9131B3B15F300CD64A6 /* ContextMenuCell.m */; };
 		3339B9161B3B15F300CD64A6 /* ContextMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3339B9141B3B15F300CD64A6 /* ContextMenuCell.xib */; };
-		3339B9181B3B19A200CD64A6 /* burger.png in Resources */ = {isa = PBXBuildFile; fileRef = 3339B9171B3B19A200CD64A6 /* burger.png */; };
 		3339B91B1B3B1FDE00CD64A6 /* MoPub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3339B9191B3B1FDE00CD64A6 /* MoPub.framework */; };
 		3339B91C1B3B1FDE00CD64A6 /* MoPub.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3339B91A1B3B1FDE00CD64A6 /* MoPub.bundle */; };
 		33CD2AED1B28A07C0081098C /* TBMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CD2AEB1B28A07C0081098C /* TBMainController.m */; };
@@ -80,7 +79,6 @@
 		3339B9121B3B15F300CD64A6 /* ContextMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextMenuCell.h; sourceTree = "<group>"; };
 		3339B9131B3B15F300CD64A6 /* ContextMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextMenuCell.m; sourceTree = "<group>"; };
 		3339B9141B3B15F300CD64A6 /* ContextMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContextMenuCell.xib; sourceTree = "<group>"; };
-		3339B9171B3B19A200CD64A6 /* burger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burger.png; sourceTree = "<group>"; };
 		3339B9191B3B1FDE00CD64A6 /* MoPub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MoPub.framework; sourceTree = "<group>"; };
 		3339B91A1B3B1FDE00CD64A6 /* MoPub.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MoPub.bundle; sourceTree = "<group>"; };
 		33CD2AEA1B28A07C0081098C /* TBMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBMainController.h; sourceTree = "<group>"; };
@@ -272,7 +270,6 @@
 				33DD84BE1B245152000EF9A6 /* AppDelegate.m */,
 				33DD84C31B245153000EF9A6 /* Main.storyboard */,
 				33DD84C61B245153000EF9A6 /* Images.xcassets */,
-				3339B9171B3B19A200CD64A6 /* burger.png */,
 				33DD84C81B245153000EF9A6 /* LaunchScreen.xib */,
 				33DD84B91B245152000EF9A6 /* Supporting Files */,
 			);
@@ -410,7 +407,6 @@
 			files = (
 				1DE0F8C11B3ACE38007D8572 /* TwitterKitResources.bundle in Resources */,
 				3339B9161B3B15F300CD64A6 /* ContextMenuCell.xib in Resources */,
-				3339B9181B3B19A200CD64A6 /* burger.png in Resources */,
 				33DD84C51B245153000EF9A6 /* Main.storyboard in Resources */,
 				3339B91C1B3B1FDE00CD64A6 /* MoPub.bundle in Resources */,
 				33DD84CA1B245153000EF9A6 /* LaunchScreen.xib in Resources */,

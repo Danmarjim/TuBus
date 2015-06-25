@@ -118,23 +118,17 @@ YALContextMenuTableViewDelegate
     }
     
     // it is better to use this method only for proper animation
-    [self.contextMenuTableView showInView:self.navigationController.view withEdgeInsets:UIEdgeInsetsZero animated:YES];
+    [self.contextMenuTableView showInView:self.navigationController.view withEdgeInsets:UIEdgeInsetsMake(64, 0, 0, 0) animated:YES];
 }
 
 - (void)initiateMenuOptions {
     self.menuTitles = @[@"",
                         @"Paradas",
-                        @"Twitter",
-                        @"Add to friends",
-                        @"Add to favourites",
-                        @"Block user"];
+                        @"Twitter"];
     
-    self.menuIcons = @[[UIImage imageNamed:@"Icnclose"],
-                       [UIImage imageNamed:@"SendMessageIcn"],
-                       [UIImage imageNamed:@"LikeIcn"],
-                       [UIImage imageNamed:@"AddToFriendsIcn"],
-                       [UIImage imageNamed:@"AddToFavouritesIcn"],
-                       [UIImage imageNamed:@"BlockUserIcn"]];
+    self.menuIcons = @[[UIImage imageNamed:@"closeIcon"],
+                       [UIImage imageNamed:@"stopIcon"],
+                       [UIImage imageNamed:@"twitterIcon"]];
 }
 
 #pragma mark - YALContextMenuTableViewDelegate
@@ -162,7 +156,7 @@ YALContextMenuTableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 110;
+    return 100;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
