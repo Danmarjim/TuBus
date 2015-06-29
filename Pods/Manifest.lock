@@ -20,19 +20,25 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - AMSmoothAlert (1.1):
+    - GPUImage
   - ContextMenu.iOS (1.0.0)
+  - GPUImage (0.1.6)
   - MBProgressHUD (0.9.1)
   - SplunkMint (4.2.2)
 
 DEPENDENCIES:
   - AFNetworking
+  - AMSmoothAlert (~> 1.0)
   - ContextMenu.iOS (~> 1.0.0)
   - MBProgressHUD (~> 0.9.1)
   - SplunkMint
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  AMSmoothAlert: 108cf0fc3eea9256ccfdcd9deaa283999ac1e47e
   ContextMenu.iOS: 7da78b3f99e604669b75e55146c6c33147f64f99
+  GPUImage: 4675ce4a5370ca92fcea8623b2a08b8f0c51b940
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   SplunkMint: 5bc47a97e867e891a983655e30c8c14618e967e6
 

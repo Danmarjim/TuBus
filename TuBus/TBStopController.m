@@ -57,19 +57,25 @@ static UILabel *label;
 
 -(IBAction)doService
 {
-    if(self.valueLine.text.length > 0 && self.valueStop.text.length > 0){
-        self.HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-        [self.navigationController.view addSubview:self.HUD];
-        
-        // Regiser for HUD callbacks so we can remove it from the window at the right time
-        self.HUD.delegate = self;
-        self.HUD.labelText = @"Cargando";
-        
-        // Show the HUD while the provided method executes in a new thread
-        [self.HUD showWhileExecuting:@selector(getPasoParada) onTarget:self withObject:nil animated:YES];
-    } else {
-        [self createAlertView];
-    }
+//    if(self.valueLine.text.length > 0 && self.valueStop.text.length > 0){
+//        self.HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+//        [self.navigationController.view addSubview:self.HUD];
+//        
+//        // Regiser for HUD callbacks so we can remove it from the window at the right time
+//        self.HUD.delegate = self;
+//        self.HUD.labelText = @"Cargando";
+//        
+//        // Show the HUD while the provided method executes in a new thread
+//        [self.HUD showWhileExecuting:@selector(getPasoParada) onTarget:self withObject:nil animated:YES];
+//    } else {
+//        [self createAlertView];
+//    }
+    
+    self.alert = [[AMSmoothAlertView alloc]initDropAlertWithTitle:@"ATENCIÓN" andText:@"Debe rellenar los campos de linea y parada" andCancelButton:NO forAlertType:AlertFailure];
+    
+    self.alert.cornerRadius = 3.0f;
+    //        [self.view addSubview:alert];
+    [self.alert show];
 }
 
 -(void)getPasoParada
