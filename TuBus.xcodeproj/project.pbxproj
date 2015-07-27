@@ -20,6 +20,11 @@
 		1DE0F8C11B3ACE38007D8572 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1DE0F8BD1B3ACE38007D8572 /* TwitterKitResources.bundle */; };
 		1DE0F8C21B3ACE38007D8572 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE0F8BE1B3ACE38007D8572 /* TwitterCore.framework */; };
 		1DE0F8C51B3ACEA8007D8572 /* TBTwitterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE0F8C41B3ACEA8007D8572 /* TBTwitterController.m */; };
+		1DFF018F1B6655A100C1213E /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DFF01851B66557400C1213E /* OpenSans-Bold.ttf */; };
+		1DFF01901B6655A100C1213E /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DFF01861B66557400C1213E /* OpenSans-ExtraBold.ttf */; };
+		1DFF01911B6655A100C1213E /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DFF01871B66557400C1213E /* OpenSans-Light.ttf */; };
+		1DFF01921B6655A100C1213E /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DFF01881B66557400C1213E /* OpenSans-Regular.ttf */; };
+		1DFF01931B6655A100C1213E /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DFF01891B66557400C1213E /* OpenSans-Semibold.ttf */; };
 		2D8834CA64C1804E9C7DEBB9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 218463949B61A9E06F4DCF8A /* libPods.a */; };
 		3328F07A1B2B435F00D0093A /* APITussam.m in Sources */ = {isa = PBXBuildFile; fileRef = 3328F0791B2B435F00D0093A /* APITussam.m */; };
 		3339B9101B3B118100CD64A6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CD2AEF1B28A5650081098C /* MapKit.framework */; };
@@ -65,6 +70,11 @@
 		1DE0F8C41B3ACEA8007D8572 /* TBTwitterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTwitterController.m; sourceTree = "<group>"; };
 		1DE0F8C81B3ACFFB007D8572 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		1DE0F8C91B3ACFFB007D8572 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1DFF01851B66557400C1213E /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		1DFF01861B66557400C1213E /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		1DFF01871B66557400C1213E /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		1DFF01881B66557400C1213E /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		1DFF01891B66557400C1213E /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		218463949B61A9E06F4DCF8A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		330D09181B25E011003E449C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		330D091A1B25E015003E449C /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -135,6 +145,7 @@
 		1DDEF0571B29A68700B6F61B /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				1DFF01841B66556000C1213E /* Fonts */,
 				1DE0F8AE1B3ABB78007D8572 /* UIColor+MyColor.h */,
 				1DE0F8AF1B3ABB78007D8572 /* UIColor+MyColor.m */,
 				1DDEF0581B29A69100B6F61B /* UTMConverter */,
@@ -188,6 +199,18 @@
 				1DE0F8BE1B3ACE38007D8572 /* TwitterCore.framework */,
 			);
 			name = APITwitter;
+			sourceTree = "<group>";
+		};
+		1DFF01841B66556000C1213E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1DFF01851B66557400C1213E /* OpenSans-Bold.ttf */,
+				1DFF01861B66557400C1213E /* OpenSans-ExtraBold.ttf */,
+				1DFF01871B66557400C1213E /* OpenSans-Light.ttf */,
+				1DFF01881B66557400C1213E /* OpenSans-Regular.ttf */,
+				1DFF01891B66557400C1213E /* OpenSans-Semibold.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		31EA9B2D2B62DB7E2EB8ADDD /* Pods */ = {
@@ -395,6 +418,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DFF018F1B6655A100C1213E /* OpenSans-Bold.ttf in Resources */,
+				1DFF01901B6655A100C1213E /* OpenSans-ExtraBold.ttf in Resources */,
+				1DFF01911B6655A100C1213E /* OpenSans-Light.ttf in Resources */,
+				1DFF01921B6655A100C1213E /* OpenSans-Regular.ttf in Resources */,
+				1DFF01931B6655A100C1213E /* OpenSans-Semibold.ttf in Resources */,
 				1DE0F8C11B3ACE38007D8572 /* TwitterKitResources.bundle in Resources */,
 				33DD84C51B245153000EF9A6 /* Main.storyboard in Resources */,
 				3339B91C1B3B1FDE00CD64A6 /* MoPub.bundle in Resources */,

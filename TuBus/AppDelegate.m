@@ -26,7 +26,9 @@
     //CONFIGURAR EL TEXTO DE LA NAVBAR
     NSDictionary *textTitleOptions = [NSDictionary dictionaryWithObjectsAndKeys:
                                       [UIColor whiteColor], NSForegroundColorAttributeName,
-                                      [UIColor blackColor], NSForegroundColorAttributeName, nil];
+                                      [UIColor blackColor], NSForegroundColorAttributeName,
+                                      [UIFont fontWithName:@"OpenSans-Light" size:21], NSFontAttributeName,
+                                      nil];
     
     [[UINavigationBar appearance] setTitleTextAttributes: textTitleOptions];    
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
