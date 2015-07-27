@@ -5,13 +5,11 @@
 //  Created by Daniel Martin Jimenez on 7/6/15.
 //  Copyright (c) 2015 Daniel Martin Jimenez. All rights reserved.
 //
-#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-
 #import "AppDelegate.h"
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
 #import <MoPub/MoPub.h>
-
+#import "UIColor+MyColor.h"
 
 @interface AppDelegate ()
 
@@ -19,12 +17,11 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
     //CONFIGURAR EL COLOR DE LA NAVBAR
-    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xFA5858)];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor customColor]];
     
     //CONFIGURAR EL TEXTO DE LA NAVBAR
     NSDictionary *textTitleOptions = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -33,6 +30,7 @@
     
     [[UINavigationBar appearance] setTitleTextAttributes: textTitleOptions];    
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTranslucent:NO];
     
     //QUITA EL VALOR BACK Y EL TITULO DE LA NAVBAR
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)                                                          forBarMetrics:UIBarMetricsDefault];

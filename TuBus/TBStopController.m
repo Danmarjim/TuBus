@@ -70,12 +70,6 @@ static UILabel *label;
 //    } else {
 //        [self createAlertView];
 //    }
-    
-    self.alert = [[AMSmoothAlertView alloc]initDropAlertWithTitle:@"ATENCIÓN" andText:@"Debe rellenar los campos de linea y parada" andCancelButton:NO forAlertType:AlertFailure];
-    
-    self.alert.cornerRadius = 3.0f;
-    //        [self.view addSubview:alert];
-    [self.alert show];
 }
 
 -(void)getPasoParada
@@ -124,16 +118,6 @@ static UILabel *label;
     [operation start];
 }
 
--(void)createAlertView
-{
-    self.alertView = [[CustomIOSAlertView alloc] init];
-    [self.alertView setContainerView:[self createAlert]];
-    [self.alertView setButtonTitles:[NSMutableArray arrayWithObjects:@"CONTINUAR", nil]];
-    
-    [self.alertView setUseMotionEffects:true];
-    [self.alertView show];
-}
-
 //Method to create the AlertView
 - (UIView *)createAlert
 {
@@ -159,12 +143,6 @@ static UILabel *label;
     [demoView addSubview:text2];
     
     return demoView;
-}
-
-//Method from CustomIOSAlert for IOS7
-- (void)customIOS7dialogButtonTouchUpInside: (CustomIOSAlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
-{
-    [alertView close];
 }
 
 //Method for dismiss KEYBOARD

@@ -9,22 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-AMSmoothAlert.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-ContextMenu.iOS.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-GPUImage.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-MBProgressHUD.xcscheme</key>
+		<key>Pods-SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,32 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>058EDC227D36E073C169D82E</key>
+		<key>0C8818F819488ABF9C543E4F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2D6375C3468D58E3AC978080</key>
+		<key>970B849562B17DBB308DEC65</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>35F066A8A3BDD40149F38AC6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7B808DEBE20EBEC79CB6366F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C14B2ECE5919603DC80F448F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FDF870998819C74E91A9ADC5</key>
+		<key>B96F26B6DA0A4E8716BACE9C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
