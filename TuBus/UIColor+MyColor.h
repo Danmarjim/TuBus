@@ -11,6 +11,5 @@
 @interface UIColor (MyColor)
 
 + (instancetype)customColor;
-+ (instancetype)customColorTextAlert;
 
 @end

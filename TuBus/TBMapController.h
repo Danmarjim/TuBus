@@ -13,11 +13,13 @@
 #import "GeodeticUTMConverter.h"
 #import "CLPAddressAnnotation.h"
 #import "APITussam.h"
+#import "HMSideMenu.h"
 
 @interface TBMapController : UIViewController <MKMapViewDelegate,  CLLocationManagerDelegate, NSXMLParserDelegate>
 
 @property(nonatomic, retain) IBOutlet MKMapView *mapView;
 @property(nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic, strong) HMSideMenu *sideMenu;
 
 @property (nonatomic, strong) NSMutableArray *arrayLat;
 @property (nonatomic, strong) NSMutableArray *arrayLon;

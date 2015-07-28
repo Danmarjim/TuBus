@@ -32,11 +32,14 @@
     self.title = @"Bienvenido";
     
     [self setMapView];
+    [self createMenu];
     
     self.arrayLon = [[NSMutableArray alloc] init];
     self.arrayLat = [[NSMutableArray alloc] init];
     self.arrayCoord = [[NSMutableArray alloc] init];
     self.userData = [NSUserDefaults standardUserDefaults];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"burguer"] style:UIBarButtonItemStylePlain target:self action:@selector(openMenu:)];
     
     //Service to get all lines from TUSSAM
     //[self getLines];
@@ -66,6 +69,62 @@
     
     //SPLUNK MINT Analitics
     //[[Mint sharedInstance] initAndStartSession:@"0ec3a64d"];
+}
+
+- (void) openMenu:(id)sender
+{
+    if (self.sideMenu.isOpen){
+        [self.sideMenu close];
+    } else {
+        [self.sideMenu open];
+    }
+}
+
+- (void)createMenu
+{
+    UIView *twitterItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
+    [twitterItem setMenuActionWithBlock:^{
+//        [self performSegueWithIdentifier:@"openTwitter" sender:nil];
+//        [self.sideMenu close];
+    }];
+    UIImageView *twitterIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 75, 75)];
+    [twitterIcon setImage:[UIImage imageNamed:@"twitter"]];
+    [twitterItem addSubview:twitterIcon];
+    
+    UIView *emailItem = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 80, 80)];
+    [emailItem setMenuActionWithBlock:^{
+        NSLog(@"tapped email item");
+    }];
+    UIImageView *emailIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 65 , 65)];
+    [emailIcon setImage:[UIImage imageNamed:@"email"]];
+    [emailItem addSubview:emailIcon];
+    
+    UIView *facebookItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
+    [facebookItem setMenuActionWithBlock:^{
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
+                                                            message:@"Tapped facebook item"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Okay"
+                                                  otherButtonTitles:nil, nil];
+        [alertView show];
+        
+    }];
+    UIImageView *facebookIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 75, 75)];
+    [facebookIcon setImage:[UIImage imageNamed:@"facebook"]];
+    [facebookItem addSubview:facebookIcon];
+    
+    UIView *browserItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
+    [browserItem setMenuActionWithBlock:^{
+//        [self performSegueWithIdentifier:@"test" sender:nil];
+//        [self.sideMenu close];
+    }];
+    UIImageView *browserIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 75, 75)];
+    [browserIcon setImage:[UIImage imageNamed:@"browser"]];
+    [browserItem addSubview:browserIcon];
+    
+    self.sideMenu = [[HMSideMenu alloc] initWithItems:@[twitterItem, emailItem, facebookItem, browserItem]];
+    [self.sideMenu setItemSpacing:10.0f];
+    [self.view addSubview:self.sideMenu];
 }
 
 - (void)setMapView
@@ -457,6 +516,11 @@ foundCharacters:(NSString *)string
         [self.arrayLat addObject:self.currentLat];
     }
     self.element = nil;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.sideMenu close];
 }
 
 @end

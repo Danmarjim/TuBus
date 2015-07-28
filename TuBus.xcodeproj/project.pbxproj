@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DDDECC01B676B9A0001C0A3 /* HMSideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDDECBF1B676B9A0001C0A3 /* HMSideMenu.m */; };
 		1DDEF05B1B29A6A600B6F61B /* GeodeticUTMConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEF05A1B29A6A600B6F61B /* GeodeticUTMConverter.m */; };
 		1DDEF05E1B29A6E700B6F61B /* CLPAddressAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEF05D1B29A6E700B6F61B /* CLPAddressAnnotation.m */; };
 		1DDF7B4F1B66233B00507F6B /* TBMapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDF7B4D1B66233B00507F6B /* TBMapController.m */; };
@@ -19,7 +20,6 @@
 		1DE0F8C01B3ACE38007D8572 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE0F8BC1B3ACE38007D8572 /* TwitterKit.framework */; };
 		1DE0F8C11B3ACE38007D8572 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1DE0F8BD1B3ACE38007D8572 /* TwitterKitResources.bundle */; };
 		1DE0F8C21B3ACE38007D8572 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE0F8BE1B3ACE38007D8572 /* TwitterCore.framework */; };
-		1DE0F8C51B3ACEA8007D8572 /* TBTwitterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE0F8C41B3ACEA8007D8572 /* TBTwitterController.m */; };
 		1DFF018F1B6655A100C1213E /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DFF01851B66557400C1213E /* OpenSans-Bold.ttf */; };
 		1DFF01901B6655A100C1213E /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DFF01861B66557400C1213E /* OpenSans-ExtraBold.ttf */; };
 		1DFF01911B6655A100C1213E /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DFF01871B66557400C1213E /* OpenSans-Light.ttf */; };
@@ -30,7 +30,6 @@
 		3339B9101B3B118100CD64A6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CD2AEF1B28A5650081098C /* MapKit.framework */; };
 		3339B91B1B3B1FDE00CD64A6 /* MoPub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3339B9191B3B1FDE00CD64A6 /* MoPub.framework */; };
 		3339B91C1B3B1FDE00CD64A6 /* MoPub.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3339B91A1B3B1FDE00CD64A6 /* MoPub.bundle */; };
-		33CD2AF51B28A6070081098C /* TBStopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CD2AF41B28A6070081098C /* TBStopController.m */; };
 		33DD84BC1B245152000EF9A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84BB1B245152000EF9A6 /* main.m */; };
 		33DD84BF1B245152000EF9A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD84BE1B245152000EF9A6 /* AppDelegate.m */; };
 		33DD84C51B245153000EF9A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33DD84C31B245153000EF9A6 /* Main.storyboard */; };
@@ -50,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DDDECBE1B676B9A0001C0A3 /* HMSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSideMenu.h; sourceTree = "<group>"; };
+		1DDDECBF1B676B9A0001C0A3 /* HMSideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSideMenu.m; sourceTree = "<group>"; };
 		1DDEF0591B29A6A600B6F61B /* GeodeticUTMConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeodeticUTMConverter.h; sourceTree = "<group>"; };
 		1DDEF05A1B29A6A600B6F61B /* GeodeticUTMConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeodeticUTMConverter.m; sourceTree = "<group>"; };
 		1DDEF05C1B29A6E700B6F61B /* CLPAddressAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLPAddressAnnotation.h; sourceTree = "<group>"; };
@@ -66,8 +67,6 @@
 		1DE0F8BC1B3ACE38007D8572 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		1DE0F8BD1B3ACE38007D8572 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
 		1DE0F8BE1B3ACE38007D8572 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
-		1DE0F8C31B3ACEA8007D8572 /* TBTwitterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBTwitterController.h; sourceTree = "<group>"; };
-		1DE0F8C41B3ACEA8007D8572 /* TBTwitterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBTwitterController.m; sourceTree = "<group>"; };
 		1DE0F8C81B3ACFFB007D8572 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		1DE0F8C91B3ACFFB007D8572 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1DFF01851B66557400C1213E /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -89,8 +88,6 @@
 		3339B91A1B3B1FDE00CD64A6 /* MoPub.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MoPub.bundle; sourceTree = "<group>"; };
 		33CD2AEF1B28A5650081098C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		33CD2AF11B28A56C0081098C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		33CD2AF31B28A6070081098C /* TBStopController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBStopController.h; sourceTree = "<group>"; };
-		33CD2AF41B28A6070081098C /* TBStopController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBStopController.m; sourceTree = "<group>"; };
 		33DD84B61B245152000EF9A6 /* TuBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DD84BA1B245152000EF9A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33DD84BB1B245152000EF9A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -133,6 +130,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DDDECBD1B676B8C0001C0A3 /* HMSideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				1DDDECBE1B676B9A0001C0A3 /* HMSideMenu.h */,
+				1DDDECBF1B676B9A0001C0A3 /* HMSideMenu.m */,
+			);
+			name = HMSideMenu;
+			sourceTree = "<group>";
+		};
 		1DDEF0561B29A67E00B6F61B /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +151,7 @@
 		1DDEF0571B29A68700B6F61B /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				1DDDECBD1B676B8C0001C0A3 /* HMSideMenu */,
 				1DFF01841B66556000C1213E /* Fonts */,
 				1DE0F8AE1B3ABB78007D8572 /* UIColor+MyColor.h */,
 				1DE0F8AF1B3ABB78007D8572 /* UIColor+MyColor.m */,
@@ -172,13 +179,6 @@
 				1DDF7B4E1B66233B00507F6B /* TBMapController.xib */,
 			);
 			name = Main;
-			sourceTree = "<group>";
-		};
-		1DDF7B511B6623FF00507F6B /* Stop */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Stop;
 			sourceTree = "<group>";
 		};
 		1DE0F8C61B3ACF4C007D8572 /* APITussam */ = {
@@ -244,12 +244,7 @@
 		33CD2AE91B28A0550081098C /* views */ = {
 			isa = PBXGroup;
 			children = (
-				1DDF7B511B6623FF00507F6B /* Stop */,
 				1DDF7B4B1B66230C00507F6B /* Main */,
-				33CD2AF31B28A6070081098C /* TBStopController.h */,
-				33CD2AF41B28A6070081098C /* TBStopController.m */,
-				1DE0F8C31B3ACEA8007D8572 /* TBTwitterController.h */,
-				1DE0F8C41B3ACEA8007D8572 /* TBTwitterController.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -494,13 +489,12 @@
 			files = (
 				3328F07A1B2B435F00D0093A /* APITussam.m in Sources */,
 				1DE0F8B01B3ABB78007D8572 /* UIColor+MyColor.m in Sources */,
-				33CD2AF51B28A6070081098C /* TBStopController.m in Sources */,
 				33DD84BF1B245152000EF9A6 /* AppDelegate.m in Sources */,
 				1DDEF05E1B29A6E700B6F61B /* CLPAddressAnnotation.m in Sources */,
 				33DD84BC1B245152000EF9A6 /* main.m in Sources */,
 				1DDEF05B1B29A6A600B6F61B /* GeodeticUTMConverter.m in Sources */,
 				1DDF7B4F1B66233B00507F6B /* TBMapController.m in Sources */,
-				1DE0F8C51B3ACEA8007D8572 /* TBTwitterController.m in Sources */,
+				1DDDECC01B676B9A0001C0A3 /* HMSideMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

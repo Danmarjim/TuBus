@@ -21,26 +21,6 @@
             </objects>
             <point key="canvasLocation" x="-110" y="-314"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="xlL-yv-NgL">
-            <objects>
-                <viewController id="zI6-0w-fwb" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cim-0y-8ZR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-110" y="300"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="u9o-i8-kxS">
-            <objects>
-                <viewController id="yfN-DG-pLZ" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="38s-xz-0ev" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="424" y="300"/>
-        </scene>
         <!--Map Controller-->
         <scene sceneID="Gju-Ts-rNl">
             <objects>
